@@ -86,7 +86,7 @@ public class VentanaAplicacion extends JFrame{
 		//add(divorcios);
 		add(Like);
 		add(Dislike);
-		add(Bloquear);
+		//add(Bloquear);
 		add(fondo);
 	}
 
