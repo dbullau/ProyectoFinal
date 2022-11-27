@@ -10,8 +10,9 @@ import javax.swing.border.TitledBorder;
 public class VentanaAplicacion extends JFrame{
 
 	private static final long serialVersionUID = 1L;
-	private JLabel nombre, edad, altura, ingresos, divorcios, fotohombre,fotomujer, quiensoy ;
+	private JLabel nombre, edad, altura, ingresos, divorcios, fotohombre,fotomujer, quiensoy,fondo ;
 	private JButton Like, Dislike, Bloquear;
+	
 	public static final String LIKE = "like";
 	public static final String DISLIKE= "dislike";
 	public static final String BLOQUEAR= "bloquear";
@@ -26,10 +27,10 @@ public class VentanaAplicacion extends JFrame{
 		
 		fotohombre = new JLabel("");
 		fotohombre.setVisible(true);
-		ImageIcon image1 = new ImageIcon(getClass().getResource("/Imagenes/hombre.png "));
-		ImageIcon icono1 = new ImageIcon(image1.getImage().getScaledInstance(200, 200, Image.SCALE_DEFAULT ));
+		ImageIcon image1 = new ImageIcon(getClass().getResource("/Imagenes/FondoHombre.png"));
+		ImageIcon icono1 = new ImageIcon(image1.getImage().getScaledInstance(219, 245, Image.SCALE_DEFAULT ));
 		fotohombre.setIcon(icono1);
-		fotohombre.setBounds(420, 10, 200, 200);
+		fotohombre.setBounds(426, 60, 219, 245);
 		fotomujer= new JLabel();
 		fotomujer.setVisible(false);
 		quiensoy = new JLabel("¿Quien Soy?");
@@ -52,26 +53,41 @@ public class VentanaAplicacion extends JFrame{
 		divorcios.setForeground(Color.black);
 		divorcios.setBounds(80, 340, 180,50);
 		divorcios.setVisible(false);
-		Like = new JButton("like");
+		Like = new JButton("l");
+		ImageIcon imag2 = new ImageIcon(getClass().getResource("/Imagenes/BotonLike.png"));
+		ImageIcon icono2 = new ImageIcon(imag2.getImage().getScaledInstance(70, 40, Image.SCALE_DEFAULT));
+		Like.setIcon(icono2);
 		Like.setActionCommand(LIKE);
-		Like.setBounds(360, 320, 80,25);
-		Dislike = new JButton("dislike");
+		Like.setBounds(411, 350, 60,40);
+		Dislike = new JButton("d");
+		ImageIcon imag3 = new ImageIcon(getClass().getResource("/Imagenes/BotonDislike.png"));
+		ImageIcon icono3 = new ImageIcon(imag3.getImage().getScaledInstance(70, 40, Image.SCALE_DEFAULT));
+		Dislike.setIcon(icono3);
 		Dislike.setActionCommand(DISLIKE);
-		Dislike.setBounds(480, 320, 80,25);
-		Bloquear = new JButton("bloquear");
+		Dislike.setBounds(505, 350, 60,40);
+		Bloquear = new JButton("b");
+		ImageIcon imag4 = new ImageIcon(getClass().getResource("/Imagenes/BotonBloquear.png"));
+		ImageIcon icono4 = new ImageIcon(imag4.getImage().getScaledInstance(70, 40, Image.SCALE_DEFAULT));
+		Bloquear.setIcon(icono4);
 		Bloquear.setActionCommand(BLOQUEAR);
-		Bloquear.setBounds(600, 320, 80,25);
+		Bloquear.setBounds(600, 350, 60,40);
+		fondo = new JLabel();
+		ImageIcon imag5 = new ImageIcon(getClass().getResource("/Imagenes/FondoVentanaAplicacion.png"));
+		ImageIcon icono5 = new ImageIcon(imag5.getImage().getScaledInstance(700, 400, Image.SCALE_DEFAULT));
+		fondo.setIcon(icono5);
+		fondo.setBounds(0, 0, 700, 400);
 		
 		add(fotohombre);
-		add(quiensoy);
-		add(nombre);
-		add(edad);
-		add(altura);
-		add(ingresos);
-		add(divorcios);
+		//add(quiensoy);
+		//add(nombre);
+		//add(edad);
+		//add(altura);
+		//add(ingresos);
+		//add(divorcios);
 		add(Like);
 		add(Dislike);
 		add(Bloquear);
+		add(fondo);
 	}
 
 	public JLabel getNombre() {
