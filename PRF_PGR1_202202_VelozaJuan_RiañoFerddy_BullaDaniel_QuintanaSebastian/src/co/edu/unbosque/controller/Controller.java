@@ -3,17 +3,20 @@ package co.edu.unbosque.controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import co.edu.unbosque.model.BosTinder;
 import co.edu.unbosque.view.View;
 
 public class Controller implements ActionListener{
 
+	private BosTinder b;
 	private View gui;
 	
 	public Controller() {
+		b = new BosTinder();
 		gui = new View(this);
 		gui.getVi().setVisible(true);
 		gui.getVis().setVisible(false);
-		
+		funcionar();
 	}
 
 	@Override
@@ -56,6 +59,10 @@ public class Controller implements ActionListener{
 		    	  gui.getVapp().setVisible(true);
 		      }
 		      
+	}
+	
+	public void funcionar() {
+		System.out.println(b.getEdao().obtenerEstudiantes(b.getEdto()));
 	}
 	
 	
