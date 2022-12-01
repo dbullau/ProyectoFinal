@@ -8,61 +8,61 @@ import co.edu.unbosque.view.View;
 
 public class Controller implements ActionListener{
 
-	private BosTinder b;
-	private View gui;
+	private BosTinder bt;
+	private View v;
 	
 	public Controller() {
-		b = new BosTinder();
-		gui = new View(this);
-		gui.getVi().setVisible(true);
-		gui.getVis().setVisible(false);
+		bt = new BosTinder();
+		v = new View(this);
+		v.getVi().setVisible(true);
+		v.getVis().setVisible(false);
 		funcionar();
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		 if(e.getActionCommand().equals(gui.getVi().INICIAR)) {
-	            gui.getVi().setVisible(false);
-	            gui.getVis().setVisible(true);
+		 if(e.getActionCommand().equals(v.getVi().INICIAR)) {
+	            v.getVi().setVisible(false);
+	            v.getVis().setVisible(true);
 	        }
 
-	        if(e.getActionCommand().equals(gui.getVi().REGISTRAR)) {
-	            gui.getVi().setVisible(false);
-	            gui.getVeg().setVisible(true);
+	        if(e.getActionCommand().equals(v.getVi().REGISTRAR)) {
+	            v.getVi().setVisible(false);
+	            v.getVeg().setVisible(true);
 	        }
 	        
-	        if(e.getActionCommand().equals(gui.getVeg().HOMBRE)) {
-	        	gui.getVeg().setVisible(false);
-	        	gui.getVresgh().setVisible(true);
-	        }else if(e.getActionCommand().equals(gui.getVeg().MUJER)) {
-	        	gui.getVeg().setVisible(false);
-	        	gui.getVresgm().setVisible(true);
+	        if(e.getActionCommand().equals(v.getVeg().HOMBRE)) {
+	        	v.getVeg().setVisible(false);
+	        	v.getVresgh().setVisible(true);
+	        }else if(e.getActionCommand().equals(v.getVeg().MUJER)) {
+	        	v.getVeg().setVisible(false);
+	        	v.getVresgm().setVisible(true);
 	        }
 	        
-	        if(e.getActionCommand().equals(gui.getVresgh().REGISTRATEM)) {
-		    	  gui.getVresgh().setVisible(false);
+	        if(e.getActionCommand().equals(v.getVresgh().REGISTRATEM)) {
+		    	  v.getVresgh().setVisible(false);
 		    	  
-		    	  gui.getVis().setVisible(true);
+		    	  v.getVis().setVisible(true);
 		    	
 		      }
 		      
-		      if(e.getActionCommand().equals(gui.getVresgm().REGISTRATEF)) {
-		    	  gui.getVresgh().setVisible(false);
+		      if(e.getActionCommand().equals(v.getVresgm().REGISTRATEF)) {
+		    	  v.getVresgh().setVisible(false);
 		    	 
-		    	  gui.getVis().setVisible(true);
+		    	  v.getVis().setVisible(true);
 		    	  
 		      }
 		      
-		      if(e.getActionCommand().equals(gui.getVis().INGRESAR)) {
-		    	  gui.getVis().setVisible(false);
-		    	  gui.getVapp().setVisible(true);
+		      if(e.getActionCommand().equals(v.getVis().INGRESAR)) {
+		    	  v.getVis().setVisible(false);
+		    	  v.getVapp().setVisible(true);
 		      }
 		      
 	}
 	
 	public void funcionar() {
-		System.out.println(b.getEdao().obtenerEstudiantes(b.getEdto()));
+		System.out.println(bt.getBtdao().obtenerUsuarios(bt.getBtdto()));
 	}
 	
 	

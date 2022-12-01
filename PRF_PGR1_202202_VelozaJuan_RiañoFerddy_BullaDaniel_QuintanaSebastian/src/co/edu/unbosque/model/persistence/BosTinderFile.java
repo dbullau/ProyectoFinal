@@ -11,25 +11,25 @@ public class BosTinderFile {
 
 	private String ruta = "./Data/datos.CSV";
 	private String separador = ";";
-	private ArrayList<BosTinderDTO> estudiantes;
+	private ArrayList<BosTinderDTO> usuarios;
 	private BufferedReader br;
 	private FileReader fr;
 	private String linea;
 	
-	public ArrayList<BosTinderDTO> leerEstudiantes(String nombreArchivo){
-		ArrayList<BosTinderDTO> estudiantes = new ArrayList<BosTinderDTO>();
+	public ArrayList<BosTinderDTO> leerUsuarios(String nombreArchivo){
+		ArrayList<BosTinderDTO> usuarios = new ArrayList<BosTinderDTO>();
 			try {
 				fr = new FileReader(ruta);
 				br = new BufferedReader(fr);
 				while((linea = br.readLine()) != null) {
-					String[] persona = linea.split(separador);
-					estudiantes.add(new BosTinderDTO(persona[0], persona[1], persona[2], persona[3], persona[4], persona[5], persona[6], persona[7], persona[8], persona[9], persona[10], persona[11], persona[12], persona[13], persona[14], persona[15]));
+					String[] datos = linea.split(separador);
+					usuarios.add(new BosTinderDTO(datos[0], datos[1], datos[2], datos[3], datos[4], datos[5], datos[6], datos[7], datos[8], datos[9], datos[10], datos[11], datos[12], datos[13], datos[14], datos[15]));
 				}
 			}
 			catch (IOException e){
 				e.printStackTrace();
 			}
-		return estudiantes;
+		return usuarios;
 	}
 	public String getRuta() {
 		return ruta;
@@ -39,10 +39,10 @@ public class BosTinderFile {
 		this.ruta = ruta;
 	}
 	public ArrayList<BosTinderDTO> getEstudiantes() {
-		return estudiantes;
+		return usuarios;
 	}
 
 	public void setEstudiantes(ArrayList<BosTinderDTO> estudiantes) {
-		this.estudiantes = estudiantes;
+		this.usuarios = estudiantes;
 	}
 }

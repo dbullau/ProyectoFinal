@@ -6,37 +6,36 @@ import co.edu.unbosque.model.persistence.BosTinderFile;
 
 public class BosTinder {
 	
-	private BosTinderFile ef;
-	private ArrayList<BosTinderDTO> edto;
-	private BosTinderDAO edao;
+	private BosTinderFile btf;
+	private ArrayList<BosTinderDTO> btdto;
+	private BosTinderDAO btdao;
 	
 	public BosTinder() {
-		ef = new BosTinderFile();
-		edto = new ArrayList<BosTinderDTO>();
-		edto = ef.leerEstudiantes(null);
-		edao = new BosTinderDAO(ef);
+		btf = new BosTinderFile();
+		btdto = new ArrayList<BosTinderDTO>();
+		btdto = btf.leerUsuarios(null);
+		btdao = new BosTinderDAO(btf);
 	}
-	public BosTinderFile getEf() {
-		return ef;
+	public BosTinderFile getBtf() {
+		return btf;
 	}
-
-	public void setEf(BosTinderFile ef) {
-		this.ef = ef;
-	}
-
-	public ArrayList<BosTinderDTO> getEdto() {
-		return edto;
+	public void setBtf(BosTinderFile btf) {
+		this.btf = btf;
 	}
 
-	public void setEdto(ArrayList<BosTinderDTO> edto) {
-		this.edto = edto;
+	public ArrayList<BosTinderDTO> getBtdto() {
+		return btdto;
 	}
 
-	public BosTinderDAO getEdao() {
-		return edao;
+	public void setBtdto(ArrayList<BosTinderDTO> btdto) {
+		this.btdto = btdto;
 	}
 
-	public void setEdao(BosTinderDAO edao) {
-		this.edao = edao;
+	public BosTinderDAO getBtdao() {
+		return btdao;
+	}
+
+	public void setBtdao(BosTinderDAO btdao) {
+		this.btdao = btdao;
 	}
 }

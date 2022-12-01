@@ -8,18 +8,18 @@ import co.edu.unbosque.model.persistence.BosTinderFile;
 
 public class BosTinderDAO {
 	
-	private BosTinderFile ef;
+	private BosTinderFile bf;
 	
-	public BosTinderDAO(BosTinderFile ef) {
-		this.ef = ef;
+	public BosTinderDAO(BosTinderFile bf) {
+		this.bf = bf;
 	}
 	
-	public BosTinderDTO buscarEstudiantes(String nombre, ArrayList<BosTinderDTO> estudiantes) {
+	public BosTinderDTO buscarUsuarios(String nombre, ArrayList<BosTinderDTO> usuarios) {
 		BosTinderDTO encontrado = null;
-		if (!estudiantes.isEmpty()) {
-			for (int i = 0; i < estudiantes.size(); i++) {
-				if (estudiantes.get(i).getNombre().equals(nombre)) {
-					encontrado = estudiantes.get(i);
+		if (!usuarios.isEmpty()) {
+			for (int i = 0; i < usuarios.size(); i++) {
+				if (usuarios.get(i).getNombre().equals(nombre)) {
+					encontrado = usuarios.get(i);
 				}
 			}
 		}
@@ -27,21 +27,21 @@ public class BosTinderDAO {
 		return encontrado;
 	}
 	
-	public boolean agregarEstudiantes(String id, String nombre, String apellido1, String apellido2, String sexo, String usuario, String contrasena, String correo, String nacimiento, String edad, String ingresos, String divorcio, String nlikesr, String nlikesd, String nmatches, String estado, ArrayList<BosTinderDTO> estudiantes) {
+	public boolean agregarUsuarios(String id, String nombre, String apellido1, String apellido2, String sexo, String usuario, String contrasena, String correo, String nacimiento, String edad, String ingresos, String divorcio, String nlikesr, String nlikesd, String nmatches, String estado, ArrayList<BosTinderDTO> usuarios) {
 		BosTinderDTO nuevo = new BosTinderDTO(id, nombre, apellido1, apellido2, sexo, usuario, contrasena, correo, nacimiento, edad, ingresos, divorcio, nlikesr, nlikesd, nmatches, estado);
 		
-		if(buscarEstudiantes(nombre, estudiantes) == null){
-			estudiantes.add(nuevo);
+		if(buscarUsuarios(nombre, usuarios) == null){
+			usuarios.add(nuevo);
 			return true;	
 		}else {
 			return false;
 		}
 	}
 	
-	public String obtenerEstudiantes(ArrayList<BosTinderDTO> estudiantes){
+	public String obtenerUsuarios(ArrayList<BosTinderDTO> usuarios){
 		String texto = "";
-		for (int i = 0; i < estudiantes.size(); i++) {
-			texto = texto.concat(estudiantes.get(i).toString() + "\n");
+		for (int i = 0; i < usuarios.size(); i++) {
+			texto = texto.concat(usuarios.get(i).toString() + "\n");
 		}
 		return texto;
 	}
