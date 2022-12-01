@@ -44,7 +44,7 @@ public class BosTinderDTO implements Serializable{
 	}
 	
 	public String toString() {
-		return id + nombre + apellido1 + apellido2 + sexo + usuario + contrasena + correo + nacimiento + edad + ingresos + divorcio + nlikesr + nlikesd + nmatches + estado;
+		return "Id = " + id + ", Nombre = " + nombre + ", Apellido 1 = " + apellido1+ ", Apellido 2 = " + apellido2 + ", Sexo = " + sexo + ", Usuario = " + usuario + ", Contrasena = " + contrasena + ", Correo = " + correo + ", Nacimiento = " + nacimiento + ", Edad = " + edad + ", Ingresos" + ingresos + divorcio + nlikesr + nlikesd + nmatches + estado;
 	}
 
 	public String getId() {

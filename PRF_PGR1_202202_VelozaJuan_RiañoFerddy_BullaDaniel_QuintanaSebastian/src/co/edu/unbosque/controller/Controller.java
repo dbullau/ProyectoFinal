@@ -55,8 +55,13 @@ public class Controller implements ActionListener{
 		      }
 		      
 		      if(e.getActionCommand().equals(v.getVis().INGRESAR)) {
-		    	  v.getVis().setVisible(false);
-		    	  v.getVapp().setVisible(true);
+		    	  String nombre = v.getVis().getUsuario().getText();
+		    	 if(bt.getBtdao().buscarUsuarios(nombre, bt.getBtdto()) != null) {
+		    		 v.getVis().setVisible(false);
+			    	 v.getVapp().setVisible(true);
+		    	 }else {
+		    		 
+		    	 }
 		      }
 		      
 	}
