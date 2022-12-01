@@ -7,7 +7,7 @@ import javax.swing.*;
 public class VentanaRegistroMujer extends JFrame  {
 	
 	public static final long serialVersionUID = 1L;
-	private JTextField txtnombre, txtaltura, txtcorreo, txtusuario, txtcontraseña, txtdivorcio;
+	private JTextField txtnombre, txtaltura,txtapellido1, txtapellido2, txtcorreo, txtusuario, txtcontraseña, txtdivorcio;
 	private JLabel fondo;
 	private JButton registrate;
 	public static final String REGISTRATEF = "Registrate";
@@ -26,7 +26,11 @@ public class VentanaRegistroMujer extends JFrame  {
 		fondo.setIcon(icono1);
 		fondo.setBounds(0,0, 700, 400);
 		txtnombre = new JTextField();
-		txtnombre.setBounds(100, 80, 200, 25);
+		txtnombre.setBounds(100, 30, 150, 25);
+		txtapellido1 = new JTextField();
+		txtapellido1.setBounds(100, 80, 100, 25);
+		txtapellido2 = new JTextField();
+		txtapellido2.setBounds(245, 80, 100, 25);
 		txtcorreo = new JTextField();
 		txtcorreo.setBounds(100, 150, 100, 25);
 		txtusuario = new JTextField();
@@ -45,6 +49,8 @@ public class VentanaRegistroMujer extends JFrame  {
 		registrate.setBounds(240, 300, 200, 40);
 
 		add(txtnombre);
+		add(txtapellido1);
+		add(txtapellido2);
 		add(txtcorreo);
 		add(txtusuario);
 		add(txtcontraseña);
