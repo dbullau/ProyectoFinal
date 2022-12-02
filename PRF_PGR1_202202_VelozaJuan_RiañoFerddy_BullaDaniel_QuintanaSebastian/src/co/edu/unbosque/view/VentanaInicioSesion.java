@@ -47,6 +47,7 @@ public class VentanaInicioSesion extends JFrame{
 		ImageIcon icono3 = new ImageIcon(imag3.getImage().getScaledInstance(700, 400, Image.SCALE_DEFAULT));
 		fondo.setIcon(icono3);
 		fondo.setBounds(0, 0, 700, 400);
+		this.setIconImage(new ImageIcon(getClass().getResource("/Imagenes/IconoLogo.png")).getImage());
 		
 		add(insContraseña);
 		add(insUsuario);

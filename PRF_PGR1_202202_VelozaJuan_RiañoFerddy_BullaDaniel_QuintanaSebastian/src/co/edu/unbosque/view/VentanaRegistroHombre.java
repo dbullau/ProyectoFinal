@@ -25,6 +25,7 @@ public class VentanaRegistroHombre extends JFrame  {
 		ImageIcon icono1 = new ImageIcon(img1.getImage().getScaledInstance(700, 400, Image.SCALE_DEFAULT));
 		fondo.setIcon(icono1);
 		fondo.setBounds(0,0, 700, 400);
+		this.setIconImage(new ImageIcon(getClass().getResource("/Imagenes/IconoLogo.png")).getImage());
 		txtnombre = new JTextField();
 		txtnombre.setBounds(100, 30, 150, 25);
 		txtapellido1 = new JTextField();
@@ -59,6 +60,7 @@ public class VentanaRegistroHombre extends JFrame  {
 		registrateh.setIcon(icono2);
 		registrateh.setActionCommand(REGISTRATEM);
 		registrateh.setBounds(250, 320, 200, 40);
+		
 		
 
 		add(txtnombre);

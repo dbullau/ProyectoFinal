@@ -80,6 +80,8 @@ public class VentanaAplicacion extends JFrame{
 		ImageIcon icono5 = new ImageIcon(imag5.getImage().getScaledInstance(700, 400, Image.SCALE_DEFAULT));
 		fondo.setIcon(icono5);
 		fondo.setBounds(0, 0, 700, 400);
+		this.setIconImage(new ImageIcon(getClass().getResource("/Imagenes/IconoLogo.png")).getImage());
+		
 		
 		add(nombre);
 		add(edad);
