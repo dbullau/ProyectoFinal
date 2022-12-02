@@ -99,7 +99,7 @@ public class VentanaAplicacion extends JFrame{
 	
 	public void asignarImagenPerfilHombre() {
 		Random numale = new Random();
-		int naleatorio = numale.nextInt((6) + 1);
+		int naleatorio = numale.nextInt((7) + 1);
 		if(naleatorio == 1) {
 			ImageIcon imgn = new ImageIcon(getClass().getResource("/Imagenes/Hombre1.png"));
 			ImageIcon iconon = new ImageIcon(imgn.getImage().getScaledInstance(219, 245, Image.SCALE_DEFAULT ));
@@ -130,11 +130,16 @@ public class VentanaAplicacion extends JFrame{
 			ImageIcon iconon = new ImageIcon(imgn.getImage().getScaledInstance(219, 245, Image.SCALE_DEFAULT ));
 			perfil.setIcon(iconon);
 		}
+		if(naleatorio == 7) {
+			ImageIcon imgn = new ImageIcon(getClass().getResource("/Imagenes/Hombre7.png"));
+			ImageIcon iconon = new ImageIcon(imgn.getImage().getScaledInstance(219, 245, Image.SCALE_DEFAULT ));
+			perfil.setIcon(iconon);
+		}
 	}
 	
 	public void asignarImagenPerfilMujer() {
 		Random numale2 = new Random();
-		int naleatorio2 = numale2.nextInt((6) + 1);
+		int naleatorio2 = numale2.nextInt((7) + 1);
 		if(naleatorio2 == 1) {
 			ImageIcon imgn = new ImageIcon(getClass().getResource("/Imagenes/Mujer1.png"));
 			ImageIcon iconon = new ImageIcon(imgn.getImage().getScaledInstance(219, 245, Image.SCALE_DEFAULT ));
@@ -162,6 +167,11 @@ public class VentanaAplicacion extends JFrame{
 		}
 		if(naleatorio2 == 6) {
 			ImageIcon imgn = new ImageIcon(getClass().getResource("/Imagenes/Mujer6.png"));
+			ImageIcon iconon = new ImageIcon(imgn.getImage().getScaledInstance(219, 245, Image.SCALE_DEFAULT ));
+			perfil.setIcon(iconon);
+		}
+		if(naleatorio2 == 7) {
+			ImageIcon imgn = new ImageIcon(getClass().getResource("/Imagenes/Mujer7.png"));
 			ImageIcon iconon = new ImageIcon(imgn.getImage().getScaledInstance(219, 245, Image.SCALE_DEFAULT ));
 			perfil.setIcon(iconon);
 		}
