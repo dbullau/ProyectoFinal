@@ -17,6 +17,7 @@ public class BosTinderDTO implements Serializable{
 	private String correo;
 	private String nacimiento;
 	private String edad;
+	private String estatura;
 	private String ingresos;
 	private String divorcio;
 	private String nlikesr;
@@ -24,7 +25,7 @@ public class BosTinderDTO implements Serializable{
 	private String nmatches;
 	private String estado;
 	
-	public BosTinderDTO(String id, String nombre, String apellido1, String apellido2, String sexo, String usuario, String contrasena, String correo, String nacimiento, String edad, String ingresos, String divorcio, String nlikesr, String nlikesd, String nmatches, String estado) {
+	public BosTinderDTO(String id, String nombre, String apellido1, String apellido2, String sexo, String usuario, String contrasena, String correo, String nacimiento, String edad, String estatura, String ingresos, String divorcio, String nlikesr, String nlikesd, String nmatches, String estado) {
 		this.id = id;
 		this.nombre = nombre;
 		this.apellido1 = apellido1;
@@ -35,6 +36,7 @@ public class BosTinderDTO implements Serializable{
 		this.correo = correo;
 		this.nacimiento = nacimiento;
 		this.edad = edad;
+		this.estatura = estatura;
 		this.ingresos = ingresos;
 		this.divorcio = divorcio;
 		this.nlikesr = nlikesr;
@@ -44,7 +46,7 @@ public class BosTinderDTO implements Serializable{
 	}
 	
 	public String toString() {
-		return "Id = " + id + ", Nombre = " + nombre + ", Apellido 1 = " + apellido1+ ", Apellido 2 = " + apellido2 + ", Sexo = " + sexo + ", Usuario = " + usuario + ", Contrasena = " + contrasena + ", Correo = " + correo + ", Nacimiento = " + nacimiento + ", Edad = " + edad + ", Ingresos" + ingresos + divorcio + nlikesr + nlikesd + nmatches + estado;
+		return "Id = " + id + ", Nombre = " + nombre + ", Apellido 1 = " + apellido1+ ", Apellido 2 = " + apellido2 + ", Sexo = " + sexo + ", Usuario = " + usuario + ", Contrasena = " + contrasena + ", Correo = " + correo + ", Nacimiento = " + nacimiento + ", Edad = " + edad + ", Estatura = " + estatura + ", Ingresos" + ingresos + divorcio + nlikesr + nlikesd + nmatches + estado;
 	}
 
 	public String getId() {

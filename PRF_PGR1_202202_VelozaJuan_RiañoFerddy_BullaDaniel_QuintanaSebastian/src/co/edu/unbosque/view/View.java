@@ -1,5 +1,7 @@
 package co.edu.unbosque.view;
 
+import javax.swing.JOptionPane;
+
 import co.edu.unbosque.controller.Controller;
 
 public class View {
@@ -29,11 +31,10 @@ public class View {
 		vresgm.getRegistrate().addActionListener(control);
 		vapp.getLike().addActionListener(control);
 		vapp.getDislike().addActionListener(control);
-		vapp.getBloquear().addActionListener(control);
 	}
-
-	
-	
+	public void mostrarInformacion(String mensaje) {
+		JOptionPane.showMessageDialog(null, mensaje);
+	}
 	public VentanaInicial getVi() {
 		return vi;
 	}

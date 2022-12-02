@@ -7,8 +7,8 @@ import javax.swing.*;
 public class VentanaRegistroHombre extends JFrame  {
 	
 	public static final long serialVersionUID = 1L;
-	private JTextField txtnombre,txtapellido1, txtapellido2, txtaltura, txtcorreo, txtusuario, txtcontraseña, txtingresos;
-	private JLabel fondo;
+	private JTextField txtnombre,txtapellido1, txtapellido2, txtestatura, txtcorreo, txtusuario, txtcontraseña, txtingresos, txtdnacimiento, txtmnacimiento, txtanacimiento, txtedad;
+	private JLabel fondo, sm, sa;
 	private JButton registrate;
 	public static final String REGISTRATEM = "Registrate";
 	
@@ -37,10 +37,22 @@ public class VentanaRegistroHombre extends JFrame  {
 		txtusuario.setBounds(400, 80, 200, 25);
 		txtcontraseña = new JTextField();
 		txtcontraseña.setBounds(400, 150 , 200, 25);
-		txtaltura = new JTextField();
-		txtaltura.setBounds(100, 220, 60, 25);
+		txtestatura = new JTextField();
+		txtestatura.setBounds(100, 220, 60, 25);
 		txtingresos = new JTextField();
 		txtingresos.setBounds(400, 220 , 200, 25);
+		txtdnacimiento = new JTextField();
+		txtdnacimiento.setBounds(100, 235, 20, 25);
+		sm = new JLabel("/");
+		sm.setBounds(125, 235, 3, 25);
+		txtmnacimiento = new JTextField();
+		txtmnacimiento.setBounds(132, 235, 20, 25);
+		sa = new JLabel("/");
+		sa.setBounds(157, 235, 3, 25);
+		txtanacimiento = new JTextField();
+		txtanacimiento.setBounds(165, 235, 40, 25);
+		txtedad = new JTextField();
+		txtedad.setBounds(400, 235, 100, 25);
 		registrate = new JButton("Registrate");
 		ImageIcon imag2 = new ImageIcon(getClass().getResource("/Imagenes/BotonRegistrate.png"));
 		ImageIcon icono2 = new ImageIcon(imag2.getImage().getScaledInstance(210, 40, Image.SCALE_DEFAULT));
@@ -55,8 +67,14 @@ public class VentanaRegistroHombre extends JFrame  {
 		add(txtcorreo);
 		add(txtusuario);
 		add(txtcontraseña);
-		add(txtaltura);
+		add(txtestatura);
 		add(txtingresos);
+		add(txtdnacimiento);
+		add(sm);
+		add(txtmnacimiento);
+		add(sa);
+		add(txtanacimiento);
+		add(txtedad);
 		add(registrate);
 		add(fondo);
 	}
@@ -70,12 +88,12 @@ public class VentanaRegistroHombre extends JFrame  {
 	}
 
 
-	public JTextField getTxtaltura() {
-		return txtaltura;
+	public JTextField getTxtestatura() {
+		return txtestatura;
 	}
 
-	public void setTxtaltura(JTextField txtaltura) {
-		this.txtaltura = txtaltura;
+	public void setTxtestatura(JTextField txtestatura) {
+		this.txtestatura = txtestatura;
 	}
 
 	public JTextField getTxtcorreo() {
@@ -125,6 +143,67 @@ public class VentanaRegistroHombre extends JFrame  {
 	public void setRegistrate(JButton registrate) {
 		this.registrate = registrate;
 	}
-	
-	
+
+	public JTextField getTxtapellido1() {
+		return txtapellido1;
+	}
+
+	public void setTxtapellido1(JTextField txtapellido1) {
+		this.txtapellido1 = txtapellido1;
+	}
+
+	public JTextField getTxtapellido2() {
+		return txtapellido2;
+	}
+
+	public void setTxtapellido2(JTextField txtapellido2) {
+		this.txtapellido2 = txtapellido2;
+	}
+	public JTextField getTxtdnacimiento() {
+		return txtdnacimiento;
+	}
+
+	public void setTxtdnacimiento(JTextField txtdnacimiento) {
+		this.txtdnacimiento = txtdnacimiento;
+	}
+
+	public JTextField getTxtmnacimiento() {
+		return txtmnacimiento;
+	}
+
+	public void setTxtmnacimiento(JTextField txtmnacimiento) {
+		this.txtmnacimiento = txtmnacimiento;
+	}
+
+	public JTextField getTxtanacimiento() {
+		return txtanacimiento;
+	}
+
+	public void setTxtanacimiento(JTextField txtanacimiento) {
+		this.txtanacimiento = txtanacimiento;
+	}
+
+	public JTextField getTxtedad() {
+		return txtedad;
+	}
+
+	public void setTxtedad(JTextField txtedad) {
+		this.txtedad = txtedad;
+	}
+
+	public JLabel getSm() {
+		return sm;
+	}
+
+	public void setSm(JLabel sm) {
+		this.sm = sm;
+	}
+
+	public JLabel getSa() {
+		return sa;
+	}
+
+	public void setSa(JLabel sa) {
+		this.sa = sa;
+	}
 }

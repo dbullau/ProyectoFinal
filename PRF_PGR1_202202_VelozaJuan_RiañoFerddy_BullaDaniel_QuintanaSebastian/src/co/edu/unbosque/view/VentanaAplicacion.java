@@ -10,12 +10,11 @@ import javax.swing.border.TitledBorder;
 public class VentanaAplicacion extends JFrame{
 
 	private static final long serialVersionUID = 1L;
-	private JLabel nombre, edad, altura, ingresos, divorcios, fotohombre,fotomujer, quiensoy,fondo ;
-	private JButton Like, Dislike, Bloquear;
+	private JLabel nombre, edad, nacimiento, estado, divorcio, ingresos, sexo, fotohombre,fotomujer,fondo ;
+	private JButton Like, Dislike;
 	
 	public static final String LIKE = "like";
 	public static final String DISLIKE= "dislike";
-	public static final String BLOQUEAR= "bloquear";
 	
 	public VentanaAplicacion() {
 		setSize(715,440);
@@ -31,46 +30,53 @@ public class VentanaAplicacion extends JFrame{
 		ImageIcon icono1 = new ImageIcon(image1.getImage().getScaledInstance(219, 245, Image.SCALE_DEFAULT ));
 		fotohombre.setIcon(icono1);
 		fotohombre.setBounds(426, 60, 219, 245);
+		
 		fotomujer= new JLabel();
 		fotomujer.setVisible(false);
-		quiensoy = new JLabel("¿Quien Soy?");
-		quiensoy.setForeground(Color.black);
-		quiensoy.setBounds(105, 25, 80, 50);
+		
 		nombre = new JLabel ("me llamo ...");
 		nombre.setForeground(Color.black);
-		nombre.setBounds(80, 120, 300,50);
+		nombre.setBounds(50, 120, 300,50);
+		
 		edad = new JLabel ("tengo ...");
 		edad.setForeground(Color.black);
-		edad.setBounds(80, 180, 120,50);
-		altura = new JLabel ("mido ....");
-		altura.setForeground(Color.black);
-		altura.setBounds(80, 240, 120,50);
-		ingresos = new JLabel ("ingreso....");
+		edad.setBounds(50, 180, 120,50);
+		
+		nacimiento = new JLabel ("mido ....");
+		nacimiento.setForeground(Color.black);
+		nacimiento.setBounds(50, 240, 120,50);
+		
+		estado = new JLabel ("ingreso....");
+		estado.setForeground(Color.black);
+		estado.setBounds(50, 300, 180,50);
+		estado.setVisible(true);
+		
+		divorcio = new JLabel ("me llamo ...");
+		divorcio.setForeground(Color.black);
+		divorcio.setBounds(300, 120, 300,50);
+		
+		ingresos = new JLabel ("tengo ...");
 		ingresos.setForeground(Color.black);
-		ingresos.setBounds(80, 300, 180,50);
-		ingresos.setVisible(true);
-		divorcios = new JLabel ("me he divorciado.....");
-		divorcios.setForeground(Color.black);
-		divorcios.setBounds(80, 340, 180,50);
-		divorcios.setVisible(false);
+		ingresos.setBounds(300, 180, 120,50);
+		
+		sexo = new JLabel ("mido ....");
+		sexo.setForeground(Color.black);
+		sexo.setBounds(300, 240, 120,50);
+		
 		Like = new JButton("l");
 		ImageIcon imag2 = new ImageIcon(getClass().getResource("/Imagenes/BotonLike.png"));
 		ImageIcon icono2 = new ImageIcon(imag2.getImage().getScaledInstance(70, 40, Image.SCALE_DEFAULT));
 		Like.setIcon(icono2);
 		Like.setActionCommand(LIKE);
 		Like.setBounds(411, 350, 60,40);
+		
 		Dislike = new JButton("d");
 		ImageIcon imag3 = new ImageIcon(getClass().getResource("/Imagenes/BotonDislike.png"));
 		ImageIcon icono3 = new ImageIcon(imag3.getImage().getScaledInstance(70, 40, Image.SCALE_DEFAULT));
 		Dislike.setIcon(icono3);
 		Dislike.setActionCommand(DISLIKE);
 		Dislike.setBounds(505, 350, 60,40);
-		Bloquear = new JButton("b");
-		ImageIcon imag4 = new ImageIcon(getClass().getResource("/Imagenes/BotonBloquear.png"));
-		ImageIcon icono4 = new ImageIcon(imag4.getImage().getScaledInstance(70, 40, Image.SCALE_DEFAULT));
-		Bloquear.setIcon(icono4);
-		Bloquear.setActionCommand(BLOQUEAR);
-		Bloquear.setBounds(600, 350, 60,40);
+		
 		fondo = new JLabel();
 		ImageIcon imag5 = new ImageIcon(getClass().getResource("/Imagenes/FondoVentanaAplicacion.png"));
 		ImageIcon icono5 = new ImageIcon(imag5.getImage().getScaledInstance(700, 400, Image.SCALE_DEFAULT));
@@ -78,18 +84,17 @@ public class VentanaAplicacion extends JFrame{
 		fondo.setBounds(0, 0, 700, 400);
 		
 		add(fotohombre);
-		//add(quiensoy);
-		//add(nombre);
-		//add(edad);
-		//add(altura);
-		//add(ingresos);
-		//add(divorcios);
+		add(nombre);
+		add(edad);
+		add(nacimiento);
+		add(estado);
+		add(divorcio);
+		add(ingresos);
+		add(sexo);
 		add(Like);
 		add(Dislike);
-		//add(Bloquear);
 		add(fondo);
 	}
-
 	public JLabel getNombre() {
 		return nombre;
 	}
@@ -106,28 +111,20 @@ public class VentanaAplicacion extends JFrame{
 		this.edad = edad;
 	}
 
-	public JLabel getAltura() {
-		return altura;
+	public JLabel getNacimiento() {
+		return nacimiento;
 	}
 
-	public void setAltura(JLabel altura) {
-		this.altura = altura;
+	public void setNacimiento(JLabel nacimiento) {
+		this.nacimiento = nacimiento;
 	}
 
-	public JLabel getIngresos() {
-		return ingresos;
+	public JLabel getEstado() {
+		return estado;
 	}
 
-	public void setIngresos(JLabel ingresos) {
-		this.ingresos = ingresos;
-	}
-
-	public JLabel getDivorcios() {
-		return divorcios;
-	}
-
-	public void setDivorcios(JLabel divorcios) {
-		this.divorcios = divorcios;
+	public void setEstado(JLabel estado) {
+		this.estado = estado;
 	}
 
 	public JLabel getFotohombre() {
@@ -146,12 +143,12 @@ public class VentanaAplicacion extends JFrame{
 		this.fotomujer = fotomujer;
 	}
 
-	public JLabel getQuiensoy() {
-		return quiensoy;
+	public JLabel getFondo() {
+		return fondo;
 	}
 
-	public void setQuiensoy(JLabel quiensoy) {
-		this.quiensoy = quiensoy;
+	public void setFondo(JLabel fondo) {
+		this.fondo = fondo;
 	}
 
 	public JButton getLike() {
@@ -169,13 +166,22 @@ public class VentanaAplicacion extends JFrame{
 	public void setDislike(JButton dislike) {
 		Dislike = dislike;
 	}
-
-	public JButton getBloquear() {
-		return Bloquear;
+	public JLabel getDivorcios() {
+		return divorcio;
 	}
-
-	public void setBloquear(JButton bloquear) {
-		Bloquear = bloquear;
+	public void setDivorcios(JLabel divorcios) {
+		this.divorcio = divorcios;
 	}
-	
+	public JLabel getIngresos() {
+		return ingresos;
+	}
+	public void setIngresos(JLabel ingresos) {
+		this.ingresos = ingresos;
+	}
+	public JLabel getSexo() {
+		return sexo;
+	}
+	public void setSexo(JLabel sexo) {
+		this.sexo = sexo;
+	}
 }
