@@ -65,7 +65,7 @@ public class BosTinderDAO {
 		umostrar = null;
 		Random numale = new Random();
 		int naleatorio = numale.nextInt((usuarios.size()) + 2);
-		if(naleatorio == Integer.parseInt(id)) {
+		if(naleatorio == Integer.parseInt(id) || naleatorio == 1) {
 			naleatorio = naleatorio + 1;
 		}
 		umostrar = usuarios.get(naleatorio);

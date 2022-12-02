@@ -27,7 +27,7 @@ public class VentanaAplicacion extends JFrame{
 		
 		perfil = new JLabel("");
 		perfil.setBounds(426, 60, 219, 245);
-		perfil.setVisible(true);
+		add(perfil);
 		
 		nombre = new JLabel ("me llamo ...");
 		nombre.setForeground(Color.black);
@@ -241,4 +241,6 @@ public class VentanaAplicacion extends JFrame{
 	public void setNegro(JLabel negro) {
 		this.perfil = negro;
 	}
+
+
 }
