@@ -12,6 +12,7 @@ public class View {
 	private VentanaRegistroHombre vresgh;
 	private VentanaRegistroMujer vresgm;
 	private VentanaAplicacion vapp;
+	private VentanaAdministrador vadmin;
 	
 	public View(Controller control) {
 		vi = new VentanaInicial();
@@ -20,7 +21,7 @@ public class View {
 		vresgh = new VentanaRegistroHombre();
 		vresgm = new VentanaRegistroMujer();
 		vapp = new VentanaAplicacion();
-		
+		vadmin = new VentanaAdministrador();
 		
 		vi.getIniciar().addActionListener(control);
 		vi.getRegistrarse().addActionListener(control);
@@ -31,7 +32,14 @@ public class View {
 		vresgm.getRegistratem().addActionListener(control);
 		vapp.getLike().addActionListener(control);
 		vapp.getDislike().addActionListener(control);
+		vadmin.getBtbuscar().addActionListener(control);
+        vadmin.getBtborrar().addActionListener(control);
+        vadmin.getBtactualizar().addActionListener(control);
+        vadmin.getBtingresos().addActionListener(control);
+        vadmin.getBtgenerarpdf().addActionListener(control);
+        vadmin.getBtlikes().addActionListener(control);
 	}
+	
 	public void mostrarInformacion(String mensaje) {
 		JOptionPane.showMessageDialog(null, mensaje);
 	}
@@ -47,6 +55,12 @@ public class View {
 		return vis;
 	}
 
+	public VentanaAdministrador getVadmin() {
+		return vadmin;
+	}
+	public void setVadmin(VentanaAdministrador vadmin) {
+		this.vadmin = vadmin;
+	}
 	public void setVis(VentanaInicioSesion vis) {
 		this.vis = vis;
 	}

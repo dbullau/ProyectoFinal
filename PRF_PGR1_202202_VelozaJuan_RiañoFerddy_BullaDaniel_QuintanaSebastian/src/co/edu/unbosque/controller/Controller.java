@@ -24,7 +24,7 @@ public class Controller implements ActionListener{
 		// TODO Auto-generated method stub
 		 if(e.getActionCommand().equals(v.getVi().INICIAR)) {
 	            v.getVi().setVisible(false);
-	            v.getVis().setVisible(true);
+	            v.getVadmin().setVisible(true);
 	        }
 
 	        if(e.getActionCommand().equals(v.getVi().REGISTRAR)) {
