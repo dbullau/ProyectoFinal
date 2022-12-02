@@ -31,49 +31,49 @@ public class VentanaAplicacion extends JFrame{
 		
 		nombre = new JLabel ("me llamo ...");
 		nombre.setForeground(Color.black);
-		nombre.setBounds(50, 120, 300,50);
+		nombre.setBounds(44, 115, 300,50);
 		
 		edad = new JLabel ("tengo ...");
 		edad.setForeground(Color.black);
-		edad.setBounds(50, 180, 120,50);
+		edad.setBounds(44, 175, 120,50);
 		
 		estatura = new JLabel ("mido ....");
 		estatura.setForeground(Color.black);
-		estatura.setBounds(50, 240, 120,50);
+		estatura.setBounds(44, 235, 120,50);
 		
 		ingresos = new JLabel ("ingreso....");
 		ingresos.setForeground(Color.black);
-		ingresos.setBounds(50, 300, 180,50);
+		ingresos.setBounds(44, 295, 180,50);
 		
 		divorcio = new JLabel ("me llamo ...");
 		divorcio.setForeground(Color.black);
-		divorcio.setBounds(300, 120, 300,50);
+		divorcio.setBounds(272, 115, 300,50);
 		
 		sexo = new JLabel ("tengo ...");
 		sexo.setForeground(Color.black);
-		sexo.setBounds(300, 180, 120,50);
+		sexo.setBounds(272, 175, 120,50);
 		
 		nacimiento = new JLabel ("mido ....");
 		nacimiento.setForeground(Color.black);
-		nacimiento.setBounds(300, 240, 120,50);
+		nacimiento.setBounds(272, 235, 120,50);
 		
 		estado = new JLabel ("mido ....");
 		estado.setForeground(Color.black);
-		estado.setBounds(300, 300, 120,50);
+		estado.setBounds(272, 295, 120,50);
 		
 		Like = new JButton("l");
 		ImageIcon imag2 = new ImageIcon(getClass().getResource("/Imagenes/BotonLike.png"));
 		ImageIcon icono2 = new ImageIcon(imag2.getImage().getScaledInstance(70, 40, Image.SCALE_DEFAULT));
 		Like.setIcon(icono2);
 		Like.setActionCommand(LIKE);
-		Like.setBounds(411, 350, 60,40);
+		Like.setBounds(460, 350, 60,40);
 		
 		Dislike = new JButton("d");
 		ImageIcon imag3 = new ImageIcon(getClass().getResource("/Imagenes/BotonDislike.png"));
 		ImageIcon icono3 = new ImageIcon(imag3.getImage().getScaledInstance(70, 40, Image.SCALE_DEFAULT));
 		Dislike.setIcon(icono3);
 		Dislike.setActionCommand(DISLIKE);
-		Dislike.setBounds(505, 350, 60,40);
+		Dislike.setBounds(550, 350, 60,40);
 		
 		fondo = new JLabel();
 		ImageIcon imag5 = new ImageIcon(getClass().getResource("/Imagenes/FondoVentanaAplicacion.png"));
