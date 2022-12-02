@@ -13,7 +13,6 @@ public class VentanaAplicacion extends JFrame{
 	private static final long serialVersionUID = 1L;
 	private JLabel nombre, edad, nacimiento, estado, divorcio, ingresos, sexo, estatura, fondo, perfil;
 	private JButton Like, Dislike;
-	private int naleatorio, naleatorio2;
 	
 	public static final String LIKE = "like";
 	public static final String DISLIKE= "dislike";
@@ -98,7 +97,7 @@ public class VentanaAplicacion extends JFrame{
 	
 	public void asignarImagenPerfilHombre() {
 		Random numale = new Random();
-		naleatorio = numale.nextInt((5) + 1);
+		int naleatorio = numale.nextInt((5) + 1);
 		if(naleatorio == 1) {
 			ImageIcon imgn = new ImageIcon(getClass().getResource("/Imagenes/Hombre1.png"));
 			ImageIcon iconon = new ImageIcon(imgn.getImage().getScaledInstance(219, 245, Image.SCALE_DEFAULT ));
@@ -127,8 +126,8 @@ public class VentanaAplicacion extends JFrame{
 	}
 	
 	public void asignarImagenPerfilMujer() {
-		Random numale = new Random();
-		naleatorio2 = numale.nextInt((5) + 1);
+		Random numale2 = new Random();
+		int naleatorio2 = numale2.nextInt((5) + 1);
 		if(naleatorio2 == 1) {
 			ImageIcon imgn = new ImageIcon(getClass().getResource("/Imagenes/Mujer1.png"));
 			ImageIcon iconon = new ImageIcon(imgn.getImage().getScaledInstance(219, 245, Image.SCALE_DEFAULT ));
@@ -241,21 +240,5 @@ public class VentanaAplicacion extends JFrame{
 
 	public void setNegro(JLabel negro) {
 		this.perfil = negro;
-	}
-
-	public int getNaleatorio() {
-		return naleatorio;
-	}
-
-	public void setNaleatorio(int naleatorio) {
-		this.naleatorio = naleatorio;
-	}
-
-	public int getNaleatorio2() {
-		return naleatorio2;
-	}
-
-	public void setNaleatorio2(int naleatorio2) {
-		this.naleatorio2 = naleatorio2;
 	}
 }

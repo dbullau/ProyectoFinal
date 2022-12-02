@@ -96,7 +96,7 @@ public class Controller implements ActionListener{
 			    	 String sexo = bt.getBtdao().getUmostrar().getSexo();
 			    	 if(sexo.equals("H")) {
 			    		 v.getVapp().asignarImagenPerfilHombre();
-			    	 }else {
+			    	 }else if(sexo.equals("M")){
 			    		 v.getVapp().asignarImagenPerfilMujer();
 			    	 }
 		    	 }else {
@@ -110,12 +110,6 @@ public class Controller implements ActionListener{
 		    	  int nlikesr = Integer.parseInt(bt.getBtdao().getUmostrar().getNlikesr());
 		    	  bt.getBtdao().getUmostrar().setNlikesr(String.valueOf(nlikesr + 1));
 		    	  bt.getBtdao().mostrarUsuarioAleatorio(bt.getBtdao().buscarUsuariosIS(v.getVis().getUsuario().getText(), v.getVis().getContraseña().getText(), bt.getBtdto()).getId(), bt.getBtdto());
-		    	  String sexo = bt.getBtdao().getUmostrar().getSexo();
-		    	  if(sexo.equals("H")) {
-		    		  v.getVapp().asignarImagenPerfilHombre();
-		    	  }else {
-		    		  v.getVapp().asignarImagenPerfilMujer();
-		    	  }
 		    	  v.getVapp().getNombre().setText(bt.getBtdao().getUmostrar().getNombre() + " " + bt.getBtdao().getUmostrar().getApellido1() + " " + bt.getBtdao().getUmostrar().getApellido2());
 		    	  v.getVapp().getEdad().setText(bt.getBtdao().getUmostrar().getEdad());
 		    	  v.getVapp().getNacimiento().setText(bt.getBtdao().getUmostrar().getNacimiento());
@@ -124,16 +118,16 @@ public class Controller implements ActionListener{
 		    	  v.getVapp().getIngresos().setText(bt.getBtdao().getUmostrar().getIngresos());
 		    	  v.getVapp().getSexo().setText(bt.getBtdao().getUmostrar().getSexo());
 		    	  v.getVapp().getEstatura().setText(bt.getBtdao().getUmostrar().getEstatura());
+		    	  String sexo = bt.getBtdao().getUmostrar().getSexo();
+		    	  if(sexo.equals("H")) {
+		    		  v.getVapp().asignarImagenPerfilHombre();
+		    	  }else if(sexo.equals("M")){
+		    		  v.getVapp().asignarImagenPerfilMujer();
+		    	  }
 		      }
 		      
 		      if(e.getActionCommand().equals(v.getVapp().DISLIKE)){
 		    	  bt.getBtdao().mostrarUsuarioAleatorio(bt.getBtdao().buscarUsuariosIS(v.getVis().getUsuario().getText(), v.getVis().getContraseña().getText(), bt.getBtdto()).getId(), bt.getBtdto());
-		    	  String sexo = bt.getBtdao().getUmostrar().getSexo();
-		    	  if(sexo.equals("H")) {
-		    		  v.getVapp().asignarImagenPerfilHombre();
-		    	  }else {
-		    		  v.getVapp().asignarImagenPerfilMujer();
-		    	  }
 		    	  v.getVapp().getNombre().setText(bt.getBtdao().getUmostrar().getNombre() + " " + bt.getBtdao().getUmostrar().getApellido1() + " " + bt.getBtdao().getUmostrar().getApellido2());
 		    	  v.getVapp().getEdad().setText(bt.getBtdao().getUmostrar().getEdad());
 		    	  v.getVapp().getNacimiento().setText(bt.getBtdao().getUmostrar().getNacimiento());
@@ -141,6 +135,13 @@ public class Controller implements ActionListener{
 		    	  v.getVapp().getDivorcio().setText(bt.getBtdao().getUmostrar().getDivorcio());
 		    	  v.getVapp().getIngresos().setText(bt.getBtdao().getUmostrar().getIngresos());
 		    	  v.getVapp().getSexo().setText(bt.getBtdao().getUmostrar().getSexo());
+		    	  v.getVapp().getEstatura().setText(bt.getBtdao().getUmostrar().getEstatura());
+		    	  String sexo = bt.getBtdao().getUmostrar().getSexo();
+		    	  if(sexo.equals("H")) {
+		    		  v.getVapp().asignarImagenPerfilHombre();
+		    	  }else if(sexo.equals("M")){
+		    		  v.getVapp().asignarImagenPerfilMujer();
+		    	  }
 		      }
 	}
 	
