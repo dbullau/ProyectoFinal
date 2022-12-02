@@ -9,14 +9,14 @@ public class VentanaRegistroHombre extends JFrame  {
 	public static final long serialVersionUID = 1L;
 	private JTextField txtnombre,txtapellido1, txtapellido2, txtestatura, txtcorreo, txtusuario, txtcontraseña, txtingresos, txtdnacimiento, txtmnacimiento, txtanacimiento, txtedad;
 	private JLabel fondo, sm, sa;
-	private JButton registrate;
-	public static final String REGISTRATEM = "Registrate";
+	private JButton registrateh;
+	public static final String REGISTRATEM = "Registrateh";
 	
 	public VentanaRegistroHombre() {
 		setSize(715, 440);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setResizable(false);
-		setTitle("Registrarse");
+		setTitle("Registrarse Hombre");
 		setLocationRelativeTo(null);
 		setLayout(null);
 
@@ -42,23 +42,23 @@ public class VentanaRegistroHombre extends JFrame  {
 		txtingresos = new JTextField();
 		txtingresos.setBounds(400, 220 , 200, 25);
 		txtdnacimiento = new JTextField();
-		txtdnacimiento.setBounds(100, 235, 20, 25);
+		txtdnacimiento.setBounds(100, 275, 20, 25);
 		sm = new JLabel("/");
-		sm.setBounds(125, 235, 3, 25);
+		sm.setBounds(125, 275, 3, 25);
 		txtmnacimiento = new JTextField();
-		txtmnacimiento.setBounds(132, 235, 20, 25);
+		txtmnacimiento.setBounds(132, 275, 20, 25);
 		sa = new JLabel("/");
-		sa.setBounds(157, 235, 3, 25);
+		sa.setBounds(157, 275, 3, 25);
 		txtanacimiento = new JTextField();
-		txtanacimiento.setBounds(165, 235, 40, 25);
+		txtanacimiento.setBounds(165, 275, 40, 25);
 		txtedad = new JTextField();
-		txtedad.setBounds(400, 235, 100, 25);
-		registrate = new JButton("Registrate");
+		txtedad.setBounds(400, 275, 100, 25);
+		registrateh = new JButton("Registrate");
 		ImageIcon imag2 = new ImageIcon(getClass().getResource("/Imagenes/BotonRegistrate.png"));
 		ImageIcon icono2 = new ImageIcon(imag2.getImage().getScaledInstance(210, 40, Image.SCALE_DEFAULT));
-		registrate.setIcon(icono2);
-		registrate.setActionCommand(REGISTRATEM);
-		registrate.setBounds(250, 300, 200, 40);
+		registrateh.setIcon(icono2);
+		registrateh.setActionCommand(REGISTRATEM);
+		registrateh.setBounds(250, 320, 200, 40);
 		
 
 		add(txtnombre);
@@ -75,7 +75,7 @@ public class VentanaRegistroHombre extends JFrame  {
 		add(sa);
 		add(txtanacimiento);
 		add(txtedad);
-		add(registrate);
+		add(registrateh);
 		add(fondo);
 	}
 
@@ -135,15 +135,7 @@ public class VentanaRegistroHombre extends JFrame  {
 	public void setTxtingresos(JTextField txtingresos) {
 		this.txtingresos = txtingresos;
 	}
-
-	public JButton getRegistrate() {
-		return registrate;
-	}
-
-	public void setRegistrate(JButton registrate) {
-		this.registrate = registrate;
-	}
-
+	
 	public JTextField getTxtapellido1() {
 		return txtapellido1;
 	}
@@ -205,5 +197,17 @@ public class VentanaRegistroHombre extends JFrame  {
 
 	public void setSa(JLabel sa) {
 		this.sa = sa;
+	}
+	
+	public JButton getRegistrateh() {
+		return registrateh;
+	}
+
+	public void setRegistrateh(JButton registrateh) {
+		this.registrateh = registrateh;
+	}
+
+	public static String getRegistratem() {
+		return REGISTRATEM;
 	}
 }

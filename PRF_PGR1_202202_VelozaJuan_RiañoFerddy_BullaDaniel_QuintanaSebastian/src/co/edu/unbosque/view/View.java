@@ -27,8 +27,8 @@ public class View {
 		vis.getIniciar().addActionListener(control);
 		veg.getBotmasculino().addActionListener(control);
 		veg.getBotfemenino().addActionListener(control);
-		vresgh.getRegistrate().addActionListener(control);
-		vresgm.getRegistrate().addActionListener(control);
+		vresgh.getRegistrateh().addActionListener(control);
+		vresgm.getRegistratem().addActionListener(control);
 		vapp.getLike().addActionListener(control);
 		vapp.getDislike().addActionListener(control);
 	}

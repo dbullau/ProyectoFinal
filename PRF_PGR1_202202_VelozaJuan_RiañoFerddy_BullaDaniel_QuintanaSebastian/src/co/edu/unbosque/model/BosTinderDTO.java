@@ -176,4 +176,11 @@ public class BosTinderDTO implements Serializable{
 	public void setEstado(String estado) {
 		this.estado = estado;
 	}
+	public String getEstatura() {
+		return estatura;
+	}
+
+	public void setEstatura(String estatura) {
+		this.estatura = estatura;
+	}
 }

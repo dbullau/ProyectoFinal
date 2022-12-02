@@ -3,6 +3,7 @@ package co.edu.unbosque.view;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Image;
+import java.util.Random;
 
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
@@ -10,8 +11,9 @@ import javax.swing.border.TitledBorder;
 public class VentanaAplicacion extends JFrame{
 
 	private static final long serialVersionUID = 1L;
-	private JLabel nombre, edad, nacimiento, estado, divorcio, ingresos, sexo, fotohombre,fotomujer,fondo ;
+	private JLabel nombre, edad, nacimiento, estado, divorcio, ingresos, sexo, estatura, fondo, perfil;
 	private JButton Like, Dislike;
+	private int naleatorio, naleatorio2;
 	
 	public static final String LIKE = "like";
 	public static final String DISLIKE= "dislike";
@@ -24,15 +26,9 @@ public class VentanaAplicacion extends JFrame{
 		setLayout(null);
 		setTitle("Bostinder");
 		
-		fotohombre = new JLabel("");
-		fotohombre.setVisible(true);
-		ImageIcon image1 = new ImageIcon(getClass().getResource("/Imagenes/FondoHombre.png"));
-		ImageIcon icono1 = new ImageIcon(image1.getImage().getScaledInstance(219, 245, Image.SCALE_DEFAULT ));
-		fotohombre.setIcon(icono1);
-		fotohombre.setBounds(426, 60, 219, 245);
-		
-		fotomujer= new JLabel();
-		fotomujer.setVisible(false);
+		perfil = new JLabel("");
+		perfil.setBounds(426, 60, 219, 245);
+		perfil.setVisible(true);
 		
 		nombre = new JLabel ("me llamo ...");
 		nombre.setForeground(Color.black);
@@ -42,26 +38,29 @@ public class VentanaAplicacion extends JFrame{
 		edad.setForeground(Color.black);
 		edad.setBounds(50, 180, 120,50);
 		
-		nacimiento = new JLabel ("mido ....");
-		nacimiento.setForeground(Color.black);
-		nacimiento.setBounds(50, 240, 120,50);
+		estatura = new JLabel ("mido ....");
+		estatura.setForeground(Color.black);
+		estatura.setBounds(50, 240, 120,50);
 		
-		estado = new JLabel ("ingreso....");
-		estado.setForeground(Color.black);
-		estado.setBounds(50, 300, 180,50);
-		estado.setVisible(true);
+		ingresos = new JLabel ("ingreso....");
+		ingresos.setForeground(Color.black);
+		ingresos.setBounds(50, 300, 180,50);
 		
 		divorcio = new JLabel ("me llamo ...");
 		divorcio.setForeground(Color.black);
 		divorcio.setBounds(300, 120, 300,50);
 		
-		ingresos = new JLabel ("tengo ...");
-		ingresos.setForeground(Color.black);
-		ingresos.setBounds(300, 180, 120,50);
-		
-		sexo = new JLabel ("mido ....");
+		sexo = new JLabel ("tengo ...");
 		sexo.setForeground(Color.black);
-		sexo.setBounds(300, 240, 120,50);
+		sexo.setBounds(300, 180, 120,50);
+		
+		nacimiento = new JLabel ("mido ....");
+		nacimiento.setForeground(Color.black);
+		nacimiento.setBounds(300, 240, 120,50);
+		
+		estado = new JLabel ("mido ....");
+		estado.setForeground(Color.black);
+		estado.setBounds(300, 300, 120,50);
 		
 		Like = new JButton("l");
 		ImageIcon imag2 = new ImageIcon(getClass().getResource("/Imagenes/BotonLike.png"));
@@ -83,17 +82,78 @@ public class VentanaAplicacion extends JFrame{
 		fondo.setIcon(icono5);
 		fondo.setBounds(0, 0, 700, 400);
 		
-		add(fotohombre);
 		add(nombre);
 		add(edad);
+		add(estatura);
+		add(ingresos);
+		add(divorcio);
+		add(sexo);
 		add(nacimiento);
 		add(estado);
-		add(divorcio);
-		add(ingresos);
-		add(sexo);
 		add(Like);
 		add(Dislike);
+		add(perfil);
 		add(fondo);
+	}
+	
+	public void asignarImagenPerfilHombre() {
+		Random numale = new Random();
+		naleatorio = numale.nextInt((5) + 1);
+		if(naleatorio == 1) {
+			ImageIcon imgn = new ImageIcon(getClass().getResource("/Imagenes/Hombre1.png"));
+			ImageIcon iconon = new ImageIcon(imgn.getImage().getScaledInstance(219, 245, Image.SCALE_DEFAULT ));
+			perfil.setIcon(iconon);
+		}
+		if(naleatorio == 2) {
+			ImageIcon imgn = new ImageIcon(getClass().getResource("/Imagenes/Hombre2.png"));
+			ImageIcon iconon = new ImageIcon(imgn.getImage().getScaledInstance(219, 245, Image.SCALE_DEFAULT ));
+			perfil.setIcon(iconon);
+		}
+		if(naleatorio == 3) {
+			ImageIcon imgn = new ImageIcon(getClass().getResource("/Imagenes/Hombre3.png"));
+			ImageIcon iconon = new ImageIcon(imgn.getImage().getScaledInstance(219, 245, Image.SCALE_DEFAULT ));
+			perfil.setIcon(iconon);
+		}
+		if(naleatorio == 4) {
+			ImageIcon imgn = new ImageIcon(getClass().getResource("/Imagenes/Hombre4.png"));
+			ImageIcon iconon = new ImageIcon(imgn.getImage().getScaledInstance(219, 245, Image.SCALE_DEFAULT ));
+			perfil.setIcon(iconon);
+		}
+		if(naleatorio == 5) {
+			ImageIcon imgn = new ImageIcon(getClass().getResource("/Imagenes/Hombre5.png"));
+			ImageIcon iconon = new ImageIcon(imgn.getImage().getScaledInstance(219, 245, Image.SCALE_DEFAULT ));
+			perfil.setIcon(iconon);
+		}
+	}
+	
+	public void asignarImagenPerfilMujer() {
+		Random numale = new Random();
+		naleatorio2 = numale.nextInt((5) + 1);
+		if(naleatorio2 == 1) {
+			ImageIcon imgn = new ImageIcon(getClass().getResource("/Imagenes/Mujer1.png"));
+			ImageIcon iconon = new ImageIcon(imgn.getImage().getScaledInstance(219, 245, Image.SCALE_DEFAULT ));
+			perfil.setIcon(iconon);
+		}
+		if(naleatorio2 == 2) {
+			ImageIcon imgn = new ImageIcon(getClass().getResource("/Imagenes/Mujer2.png"));
+			ImageIcon iconon = new ImageIcon(imgn.getImage().getScaledInstance(219, 245, Image.SCALE_DEFAULT ));
+			perfil.setIcon(iconon);
+		}
+		if(naleatorio2 == 3) {
+			ImageIcon imgn = new ImageIcon(getClass().getResource("/Imagenes/Mujer3.png"));
+			ImageIcon iconon = new ImageIcon(imgn.getImage().getScaledInstance(219, 245, Image.SCALE_DEFAULT ));
+			perfil.setIcon(iconon);
+		}
+		if(naleatorio2 == 4) {
+			ImageIcon imgn = new ImageIcon(getClass().getResource("/Imagenes/Mujer4.png"));
+			ImageIcon iconon = new ImageIcon(imgn.getImage().getScaledInstance(219, 245, Image.SCALE_DEFAULT ));
+			perfil.setIcon(iconon);
+		}
+		if(naleatorio2 == 5) {
+			ImageIcon imgn = new ImageIcon(getClass().getResource("/Imagenes/Mujer5.png"));
+			ImageIcon iconon = new ImageIcon(imgn.getImage().getScaledInstance(219, 245, Image.SCALE_DEFAULT ));
+			perfil.setIcon(iconon);
+		}
 	}
 	public JLabel getNombre() {
 		return nombre;
@@ -126,23 +186,7 @@ public class VentanaAplicacion extends JFrame{
 	public void setEstado(JLabel estado) {
 		this.estado = estado;
 	}
-
-	public JLabel getFotohombre() {
-		return fotohombre;
-	}
-
-	public void setFotohombre(JLabel fotohombre) {
-		this.fotohombre = fotohombre;
-	}
-
-	public JLabel getFotomujer() {
-		return fotomujer;
-	}
-
-	public void setFotomujer(JLabel fotomujer) {
-		this.fotomujer = fotomujer;
-	}
-
+	
 	public JLabel getFondo() {
 		return fondo;
 	}
@@ -166,12 +210,6 @@ public class VentanaAplicacion extends JFrame{
 	public void setDislike(JButton dislike) {
 		Dislike = dislike;
 	}
-	public JLabel getDivorcios() {
-		return divorcio;
-	}
-	public void setDivorcios(JLabel divorcios) {
-		this.divorcio = divorcios;
-	}
 	public JLabel getIngresos() {
 		return ingresos;
 	}
@@ -183,5 +221,41 @@ public class VentanaAplicacion extends JFrame{
 	}
 	public void setSexo(JLabel sexo) {
 		this.sexo = sexo;
+	}
+	public JLabel getDivorcio() {
+		return divorcio;
+	}
+	public void setDivorcio(JLabel divorcio) {
+		this.divorcio = divorcio;
+	}
+	public JLabel getEstatura() {
+		return estatura;
+	}
+	public void setEstatura(JLabel estatura) {
+		this.estatura = estatura;
+	}
+
+	public JLabel getNegro() {
+		return perfil;
+	}
+
+	public void setNegro(JLabel negro) {
+		this.perfil = negro;
+	}
+
+	public int getNaleatorio() {
+		return naleatorio;
+	}
+
+	public void setNaleatorio(int naleatorio) {
+		this.naleatorio = naleatorio;
+	}
+
+	public int getNaleatorio2() {
+		return naleatorio2;
+	}
+
+	public void setNaleatorio2(int naleatorio2) {
+		this.naleatorio2 = naleatorio2;
 	}
 }

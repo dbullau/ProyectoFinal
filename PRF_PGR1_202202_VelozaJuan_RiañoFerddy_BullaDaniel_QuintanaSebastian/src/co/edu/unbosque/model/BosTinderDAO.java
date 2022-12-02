@@ -64,7 +64,7 @@ public class BosTinderDAO {
 	public void mostrarUsuarioAleatorio(String id, ArrayList<BosTinderDTO> usuarios) {
 		umostrar = null;
 		Random numale = new Random();
-		int naleatorio = numale.nextInt(usuarios.size() + 1);
+		int naleatorio = numale.nextInt((usuarios.size()) + 1);
 		if(naleatorio == Integer.parseInt(id)) {
 			naleatorio = naleatorio + 1;
 		}
