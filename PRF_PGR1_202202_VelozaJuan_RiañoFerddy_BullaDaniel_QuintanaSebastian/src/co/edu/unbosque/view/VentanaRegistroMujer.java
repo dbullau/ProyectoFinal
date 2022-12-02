@@ -36,36 +36,36 @@ public class VentanaRegistroMujer extends JFrame  {
 		txtapellido2.setBounds(245, 80, 100, 25);
 		
 		txtcorreo = new JTextField();
-		txtcorreo.setBounds(100, 150, 100, 25);
+		txtcorreo.setBounds(100, 130, 100, 25);
 		
 		txtusuario = new JTextField();
 		txtusuario.setBounds(400, 80, 200, 25);
 		
 		txtcontraseña = new JTextField();
-		txtcontraseña.setBounds(400, 150 , 200, 25);
+		txtcontraseña.setBounds(400, 130 , 200, 25);
 		
 		txtestatura = new JTextField();
-		txtestatura.setBounds(100, 220, 60, 25);
+		txtestatura.setBounds(100, 180, 60, 25);
 		
 		txtdivorcio = new JTextField();
-		txtdivorcio.setBounds(400, 220 , 200, 25);
+		txtdivorcio.setBounds(400, 180, 50, 25);
 		
 		txtdnacimiento = new JTextField();
-		txtdnacimiento.setBounds(100, 275, 20, 25);
+		txtdnacimiento.setBounds(100, 230, 20, 25);
 		
 		sm = new JLabel("/");
-		sm.setBounds(125, 275, 3, 25);
+		sm.setBounds(125, 230, 3, 25);
 		
 		txtmnacimiento = new JTextField();
-		txtmnacimiento.setBounds(132, 275, 20, 25);
+		txtmnacimiento.setBounds(132, 230, 20, 25);
 		
 		sa = new JLabel("/");
-		sa.setBounds(157, 275, 3, 25);
+		sa.setBounds(157, 230, 3, 25);
 		txtanacimiento = new JTextField();
-		txtanacimiento.setBounds(165, 275, 40, 25);
+		txtanacimiento.setBounds(165, 230, 40, 25);
 		
 		txtedad = new JTextField();
-		txtedad.setBounds(400, 275, 100, 25);
+		txtedad.setBounds(400, 230, 100, 25);
 		
 		registratem = new JButton("Registrate");
 		ImageIcon imag2 = new ImageIcon(getClass().getResource("/Imagenes/BotonRegistrate.png"));
