@@ -1,6 +1,7 @@
 package co.edu.unbosque.model;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -12,13 +13,16 @@ public class BosTinderDAO {
 	private BosTinderFile bf;
 	private BosTinderDTO umostrar;
 	private BosTinderDTO umostrar2;
+	private BosTinderDTO encontrado;
+	private BosTinderDTO encontrado2;
+	private BosTinderDTO encontrado3;
 	
 	public BosTinderDAO(BosTinderFile bf) {
 		this.bf = bf;
 	}
 	
 	public BosTinderDTO buscarUsuarios(String usuario, ArrayList<BosTinderDTO> usuarios) {
-		BosTinderDTO encontrado = null;
+		encontrado = null;
 		if (!usuarios.isEmpty()) {
 			for (int i = 0; i < usuarios.size(); i++) {
 				if (usuarios.get(i).getUsuario().equals(usuario)) {
@@ -31,7 +35,7 @@ public class BosTinderDAO {
 	}
 	
 	public BosTinderDTO buscarUsuariosIS(String usuario, String contrasena, ArrayList<BosTinderDTO> usuarios) {
-		BosTinderDTO encontrado = null;
+		encontrado2 = null;
 		if (!usuarios.isEmpty()) {
 			for (int i = 0; i < usuarios.size(); i++) {
 				if (usuarios.get(i).getUsuario().equals(usuario) && usuarios.get(i).getContrasena().equals(contrasena)) {
@@ -40,7 +44,20 @@ public class BosTinderDAO {
 			}
 		}
 
-		return encontrado;
+		return encontrado2;
+	}
+	
+	public BosTinderDTO buscarUsuariosAdmin(String id, ArrayList<BosTinderDTO> usuarios) {
+		encontrado3 = null;
+		if (!usuarios.isEmpty()) {
+			for (int i = 0; i < usuarios.size(); i++) {
+				if (usuarios.get(i).getId().equals(id)) {
+					encontrado3 = usuarios.get(i);
+				}
+			}
+		}
+
+		return encontrado3;
 	}
 	
 	public boolean agregarUsuarios(String id, String nombre, String apellido1, String apellido2, String sexo, String usuario, String contrasena, String correo, String nacimiento, String edad, String estatura, String ingresos, String divorcio, String nlikesr, String nlikesd, String nmatches, String estado, ArrayList<BosTinderDTO> usuarios) {
@@ -88,6 +105,21 @@ public class BosTinderDAO {
 		usuarios.set(id1, umostrar2);
 		bf.escribirUsuarios(usuarios);
 	}
+	
+	public boolean eliminarUsuario(String id, ArrayList<BosTinderDTO> usuarios) {
+		boolean resp=false;
+		BosTinderDTO eliminado = buscarUsuariosAdmin(id, usuarios);
+		if(eliminado!=null) {
+			usuarios.remove(eliminado);
+			for (int i = Integer.parseInt(id); i + 1 <= usuarios.size(); i++) {
+				eliminado = usuarios.get(i);
+				eliminado.setId(String.valueOf(Integer.parseInt(eliminado.getId()) - 1));
+				bf.escribirUsuarios(usuarios);
+			}
+			resp= true;
+		}
+		return resp;
+	}
 
 	public BosTinderDTO getUmostrar() {
 		return umostrar;
@@ -102,5 +134,27 @@ public class BosTinderDAO {
 
 	public void setUmostrar2(BosTinderDTO umostrar2) {
 		this.umostrar2 = umostrar2;
+	}
+	public BosTinderDTO getEncontrado() {
+		return encontrado;
+	}
+
+	public void setEncontrado(BosTinderDTO encontrado) {
+		this.encontrado = encontrado;
+	}
+
+	public BosTinderDTO getEncontrado2() {
+		return encontrado2;
+	}
+
+	public void setEncontrado2(BosTinderDTO encontrado2) {
+		this.encontrado2 = encontrado2;
+	}
+	public BosTinderDTO getEncontrado3() {
+		return encontrado3;
+	}
+
+	public void setEncontrado3(BosTinderDTO encontrado3) {
+		this.encontrado3 = encontrado3;
 	}
 }

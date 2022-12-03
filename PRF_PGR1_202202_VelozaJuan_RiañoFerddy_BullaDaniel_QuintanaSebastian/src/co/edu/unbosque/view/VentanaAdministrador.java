@@ -50,8 +50,9 @@ public class VentanaAdministrador extends JFrame{
 		
 		informacionfiltrada = new JTextArea();
 		informacionfiltrada.setEditable(false);
-		scroll2 = new JScrollPane(scroll2);
+		scroll2 = new JScrollPane(informacionfiltrada);
 		scroll2.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+		scroll2.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 		informacionfiltrada.setBackground(Color.white);
 		informacionfiltrada.setForeground(Color.black);
 		scroll2.setBounds(20, 250, 280, 130);

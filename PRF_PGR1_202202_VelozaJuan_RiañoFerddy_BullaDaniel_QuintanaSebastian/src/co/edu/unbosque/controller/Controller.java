@@ -26,7 +26,7 @@ public class Controller implements ActionListener{
 		// TODO Auto-generated method stub
 		 if(e.getActionCommand().equals(v.getVi().INICIAR)) {
 	            v.getVi().setVisible(false);
-	            v.getVis().setVisible(true);
+	            v.getVadmin().setVisible(true);
 	        }
 
 	        if(e.getActionCommand().equals(v.getVi().REGISTRAR)) {
@@ -147,6 +147,29 @@ public class Controller implements ActionListener{
 		    		  v.getVapp().asignarImagenPerfilHombre();
 		    	  }else if(sexo.equals("M")){
 		    		  v.getVapp().asignarImagenPerfilMujer();
+		    	  }
+		      }
+		      
+		      if(e.getActionCommand().equals(v.getVadmin().BUSCAR)) {
+		    	 if(bt.getBtdao().buscarUsuariosAdmin(v.getVadmin().getTxtnumusuario().getText(), bt.getBtdto()) != null) {
+		    		 v.getVadmin().getInformacionfiltrada().setText("ID: " + bt.getBtdao().getEncontrado3().getId() + ", NOMBRE: " + bt.getBtdao().getEncontrado3().getNombre() + ", APELLIDO 1: " + bt.getBtdao().getEncontrado3().getApellido1() + ", APELLIDO 2:" + bt.getBtdao().getEncontrado3().getApellido2() + ", SEXO: " + bt.getBtdao().getEncontrado3().getSexo() + ", USUARIO: " + bt.getBtdao().getEncontrado3().getUsuario() + ", CONTRASENA: " + bt.getBtdao().getEncontrado3().getContrasena() + ", CORREO: " + bt.getBtdao().getEncontrado3().getCorreo() + ", NACIMIENTO: " + bt.getBtdao().getEncontrado3().getNacimiento() + ", EDAD: " + bt.getBtdao().getEncontrado3().getEdad() + ", ESTATURA: " + bt.getBtdao().getEncontrado3().getEstatura() + ", INGRESOS: " + bt.getBtdao().getEncontrado3().getIngresos() + ", DIVORCIO: " + bt.getBtdao().getEncontrado3().getDivorcio() + ", NUMERO DE LIKES RECIBIDOS: " + bt.getBtdao().getEncontrado3().getNlikesr() + ", NUMERO DE LIKES OTORGADOS: " + bt.getBtdao().getEncontrado3().getNlikesd() + ", NUMERO DE MATCHES: " + bt.getBtdao().getEncontrado3().getNmatches() + ", ESTADO: " + bt.getBtdao().getEncontrado3().getEstado());
+		    		 v.getVadmin().getTxtnumusuario().setText("");
+		    	 }else {
+		    		 v.getVadmin().getInformacionfiltrada().setText("");
+		    		 v.getVadmin().getTxtnumusuario().setText("");
+		    		 v.mostrarInformacion("El usuario con ID: " + v.getVadmin().getTxtnumusuario().getText() + " no existe");
+		    	 }
+		      }
+		      
+		      if(e.getActionCommand().equals(v.getVadmin().BORRAR)) {
+		    	  if(bt.getBtdao().buscarUsuariosAdmin(v.getVadmin().getTxtnumusuario().getText(), bt.getBtdto()) != null) {
+		    		  if(bt.getBtdao().eliminarUsuario(v.getVadmin().getTxtnumusuario().getText(), bt.getBtdto())) {
+		    			   v.mostrarInformacion("Se ha eliminado el usuario con ID: " + v.getVadmin().getTxtnumusuario().getText());
+		    		  }else {
+		    			  v.mostrarInformacion("No se ha podido eliminar con ID: " + v.getVadmin().getTxtnumusuario().getText());
+		    		  }
+		    	  }else {
+		    		  v.mostrarInformacion("El usuario con ID: " + v.getVadmin().getTxtnumusuario().getText() + " no existe");
 		    	  }
 		      }
 	}
