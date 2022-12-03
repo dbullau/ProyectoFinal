@@ -11,7 +11,24 @@ public class VentanaAdministrador extends JFrame{
 	private JTextArea informacioncompleta,informacionfiltrada;
 	private JTextField txtnumusuario;
 	private JButton btbuscar, btactualizar, btborrar , btingresos, btlikes, btgenerarpdf ;
-	private JComboBox ordenar, genero;
+	private JComboBox genero;
+	private JMenuBar barramenu;
+    private JMenu menuordenar;
+    private JMenu likes;
+    private JMenu nombre;
+    private JMenu apellido;
+    private JMenu edad;
+    private JMenu usuario;
+    private JMenuItem likesascendente;
+    private JMenuItem likesdescendente;
+    private JMenuItem nombreascendente;
+    private JMenuItem nombredescendente;
+    private JMenuItem apellidoascendente;
+    private JMenuItem apellidodescendente;
+    private JMenuItem edadascendente;
+    private JMenuItem edaddescendente;
+    private JMenuItem usuarioascendente;
+    private JMenuItem usuariodescendente;
 	private JScrollPane scroll1, scroll2;
 	private JLabel fondo;
 	private Color colorMorado = new Color(84, 24, 52);
@@ -30,6 +47,16 @@ public class VentanaAdministrador extends JFrame{
 	public static final String BUSCAR = "buscar";
 	public static final String ACTUALIZAR = "actualizar";
 	public static final String BORRAR = "borrar";
+	public static final String LIKESA = "likesascendente";
+    public static final String LIKESD = "likesdescendente";
+    public static final String NOMBREA = "nombreascendente";
+    public static final String NOMBRED = "nombredescendente";
+    public static final String APELLIDOA = "apellidoascendente";
+    public static final String APELLIDOD = "apellidodescendente";
+    public static final String EDADA = "edadascendente";
+    public static final String EDADD = "edaddescendente";
+    public static final String USUARIOA = "usuarioascendente";
+    public static final String USUARIOD = "usuariodescendente";
 	
 	public VentanaAdministrador() {
 		setSize(715,440);
@@ -74,10 +101,68 @@ public class VentanaAdministrador extends JFrame{
 		btborrar.setBounds(340, 310, 80, 20);
 		btborrar.setActionCommand(BORRAR);
 	
-		ordenar = new JComboBox();
-		ordenar.addItem("Ascendente");
-		ordenar.addItem("Descendente");
-		ordenar.setBounds(530, 40, 100, 20);
+		barramenu = new JMenuBar();
+		barramenu.setBackground(colorMorado);
+		setJMenuBar(barramenu);
+		
+		menuordenar = new JMenu("Ordenar");
+		menuordenar.setForeground(Color.white);
+		barramenu.add(menuordenar);
+	
+		likes = new JMenu("Likes");
+		menuordenar.add(likes);
+		
+		nombre = new JMenu("Nombre");
+		menuordenar.add(nombre);
+		
+		apellido = new JMenu("Apellido");
+		menuordenar.add(apellido);
+		
+		edad = new JMenu("Edad");
+		menuordenar.add(edad);
+		
+		usuario = new JMenu("Usuario");
+		menuordenar.add(usuario);
+		
+		likesascendente = new JMenuItem("Ascendente");
+		likesascendente.setActionCommand(LIKESA);
+		likes.add(likesascendente);
+		
+		likesdescendente = new JMenuItem("Descendente");
+		likesdescendente.setActionCommand(LIKESD);
+		likes.add(likesdescendente);
+		
+		nombreascendente = new JMenuItem("Ascendente");
+		nombreascendente.setActionCommand(NOMBREA);
+		nombre.add(nombreascendente);
+		
+		nombredescendente = new JMenuItem("Descendnte");
+		nombredescendente.setActionCommand(NOMBRED);
+		nombre.add(nombredescendente);
+		
+		apellidoascendente = new JMenuItem("Ascendente");
+		apellidoascendente.setActionCommand(APELLIDOA);
+		apellido.add(apellidoascendente);
+		
+		apellidodescendente = new JMenuItem("Descendente");
+		apellidodescendente.setActionCommand(APELLIDOD);
+		apellido.add(apellidodescendente);
+		
+		edadascendente = new JMenuItem("Ascendente");
+		edadascendente.setActionCommand(EDADA);
+		edad.add(edadascendente);
+		
+		edaddescendente = new JMenuItem("Ascendente");
+		edaddescendente.setActionCommand(EDADD);
+		edad.add(edaddescendente);
+		
+		usuarioascendente = new JMenuItem("Ascendente");
+		usuarioascendente.setActionCommand(USUARIOA);
+		usuario.add(usuarioascendente);
+		
+		usuariodescendente= new JMenuItem("Descendente");
+		usuariodescendente.setActionCommand(USUARIOD);
+		usuario.add(usuariodescendente);
 		
 		btactualizar = new JButton("Actualizar");
 		ImageIcon imag1 = new ImageIcon(getClass().getResource("/Imagenes/BotonActualizar.png"));
@@ -124,7 +209,7 @@ public class VentanaAdministrador extends JFrame{
 		add(txtnumusuario);
 		add(btbuscar);
 		add(btborrar);
-		add(ordenar);
+		
 		add(genero);
 		add(btlikes);
 		add(btingresos);
@@ -205,14 +290,6 @@ public class VentanaAdministrador extends JFrame{
 
 	public void setBtlikes(JButton btlikes) {
 		this.btlikes = btlikes;
-	}
-
-	public JComboBox getOrdenar() {
-		return ordenar;
-	}
-
-	public void setOrdenar(JComboBox ordenar) {
-		this.ordenar = ordenar;
 	}
 
 	public JScrollPane getScroll1() {
