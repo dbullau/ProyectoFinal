@@ -11,6 +11,7 @@ public class BosTinderDAO {
 	
 	private BosTinderFile bf;
 	private BosTinderDTO umostrar;
+	private BosTinderDTO umostrar2;
 	
 	public BosTinderDAO(BosTinderFile bf) {
 		this.bf = bf;
@@ -47,6 +48,7 @@ public class BosTinderDAO {
 		
 		if(buscarUsuarios(nombre, usuarios) == null){
 			usuarios.add(nuevo);
+			bf.escribirUsuarios(usuarios);
 			return true;	
 		}else {
 			return false;
@@ -64,11 +66,27 @@ public class BosTinderDAO {
 	public void mostrarUsuarioAleatorio(String id, ArrayList<BosTinderDTO> usuarios) {
 		umostrar = null;
 		Random numale = new Random();
-		int naleatorio = numale.nextInt((usuarios.size()) + 2);
-		if(naleatorio == Integer.parseInt(id) || naleatorio == 1) {
+		int naleatorio = numale.nextInt((usuarios.size()));
+		if(naleatorio == Integer.parseInt(id) || naleatorio == 1 || naleatorio == 0) {
 			naleatorio = naleatorio + 1;
 		}
 		umostrar = usuarios.get(naleatorio);
+		usuarios.set(naleatorio, umostrar);
+		bf.escribirUsuarios(usuarios);
+	}
+	
+	public void actualizarUsuario(String id, ArrayList<BosTinderDTO> usuarios) {
+		int id1 = Integer.parseInt(id);
+		usuarios.set(id1, umostrar);
+		bf.escribirUsuarios(usuarios);
+	}
+	
+	public void actualizarUsuario2(String id, ArrayList<BosTinderDTO> usuarios) {
+		umostrar2 = null;
+		umostrar2 = usuarios.get(Integer.parseInt(id));
+		int id1 = Integer.parseInt(id);
+		usuarios.set(id1, umostrar2);
+		bf.escribirUsuarios(usuarios);
 	}
 
 	public BosTinderDTO getUmostrar() {
@@ -77,5 +95,12 @@ public class BosTinderDAO {
 
 	public void setUmostrar(BosTinderDTO umostrar) {
 		this.umostrar = umostrar;
+	}
+	public BosTinderDTO getUmostrar2() {
+		return umostrar2;
+	}
+
+	public void setUmostrar2(BosTinderDTO umostrar2) {
+		this.umostrar2 = umostrar2;
 	}
 }

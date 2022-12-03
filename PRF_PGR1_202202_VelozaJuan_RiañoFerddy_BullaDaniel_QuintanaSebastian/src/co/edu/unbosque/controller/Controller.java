@@ -10,6 +10,8 @@ public class Controller implements ActionListener{
 
 	private BosTinder bt;
 	private View v;
+	private int nlikesd;
+	private int nlikesr;
 	
 	public Controller() {
 		bt = new BosTinder();
@@ -24,7 +26,7 @@ public class Controller implements ActionListener{
 		// TODO Auto-generated method stub
 		 if(e.getActionCommand().equals(v.getVi().INICIAR)) {
 	            v.getVi().setVisible(false);
-	            v.getVadmin().setVisible(true);
+	            v.getVis().setVisible(true);
 	        }
 
 	        if(e.getActionCommand().equals(v.getVi().REGISTRAR)) {
@@ -84,6 +86,7 @@ public class Controller implements ActionListener{
 		    	 if(bt.getBtdao().buscarUsuariosIS(v.getVis().getUsuario().getText(), v.getVis().getContraseña().getText(), bt.getBtdto()) != null) {
 		    		 v.getVis().setVisible(false);
 			    	 v.getVapp().setVisible(true);
+			    	 nlikesd = Integer.parseInt(bt.getBtdao().buscarUsuariosIS(v.getVis().getUsuario().getText(), v.getVis().getContraseña().getText(), bt.getBtdto()).getNlikesd());
 			    	 bt.getBtdao().mostrarUsuarioAleatorio(bt.getBtdao().buscarUsuariosIS(v.getVis().getUsuario().getText(), v.getVis().getContraseña().getText(), bt.getBtdto()).getId(), bt.getBtdto());
 			    	 v.getVapp().getNombre().setText(bt.getBtdao().getUmostrar().getNombre() + " " + bt.getBtdao().getUmostrar().getApellido1() + " " + bt.getBtdao().getUmostrar().getApellido2());
 			    	 v.getVapp().getEdad().setText(bt.getBtdao().getUmostrar().getEdad());
@@ -105,10 +108,10 @@ public class Controller implements ActionListener{
 		      }
 		      
 		      if(e.getActionCommand().equals(v.getVapp().LIKE)) {
-		    	  int nlikesd = Integer.parseInt(bt.getBtdao().buscarUsuariosIS(v.getVis().getUsuario().getText(), v.getVis().getContraseña().getText(), bt.getBtdto()).getNlikesd());
-		    	  bt.getBtdao().buscarUsuariosIS(v.getVis().getUsuario().getText(), v.getVis().getContraseña().getText(), bt.getBtdto()).setNlikesd(String.valueOf(nlikesd + 1));
-		    	  int nlikesr = Integer.parseInt(bt.getBtdao().getUmostrar().getNlikesr());
+		    	  nlikesr = Integer.parseInt(bt.getBtdao().getUmostrar().getNlikesr());
 		    	  bt.getBtdao().getUmostrar().setNlikesr(String.valueOf(nlikesr + 1));
+		    	  nlikesr = nlikesr + 1;
+		    	  bt.getBtdao().actualizarUsuario(bt.getBtdao().getUmostrar().getId(), bt.getBtdto());
 		    	  bt.getBtdao().mostrarUsuarioAleatorio(bt.getBtdao().buscarUsuariosIS(v.getVis().getUsuario().getText(), v.getVis().getContraseña().getText(), bt.getBtdto()).getId(), bt.getBtdto());
 		    	  v.getVapp().getNombre().setText(bt.getBtdao().getUmostrar().getNombre() + " " + bt.getBtdao().getUmostrar().getApellido1() + " " + bt.getBtdao().getUmostrar().getApellido2());
 		    	  v.getVapp().getEdad().setText(bt.getBtdao().getUmostrar().getEdad());
@@ -118,6 +121,9 @@ public class Controller implements ActionListener{
 		    	  v.getVapp().getIngresos().setText(bt.getBtdao().getUmostrar().getIngresos());
 		    	  v.getVapp().getSexo().setText(bt.getBtdao().getUmostrar().getSexo());
 		    	  v.getVapp().getEstatura().setText(bt.getBtdao().getUmostrar().getEstatura());
+		    	  bt.getBtdao().buscarUsuariosIS(v.getVis().getUsuario().getText(), v.getVis().getContraseña().getText(), bt.getBtdto()).setNlikesd(String.valueOf(nlikesd + 1));
+		    	  nlikesd = nlikesd + 1;
+		    	  bt.getBtdao().actualizarUsuario2(bt.getBtdao().buscarUsuariosIS(v.getVis().getUsuario().getText(), v.getVis().getContraseña().getText(), bt.getBtdto()).getId(), bt.getBtdto());
 		    	  String sexo = bt.getBtdao().getUmostrar().getSexo();
 		    	  if(sexo.equals("H")) {
 		    		  v.getVapp().asignarImagenPerfilHombre();

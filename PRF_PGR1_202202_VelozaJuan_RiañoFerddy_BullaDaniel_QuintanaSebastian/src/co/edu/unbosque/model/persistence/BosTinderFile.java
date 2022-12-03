@@ -8,22 +8,38 @@ import co.edu.unbosque.model.BosTinderDTO;
 
 
 public class BosTinderFile {
-/*
- * esta clase busca y lee el archivo CSV 
- */
-	private String ruta = "./Data/datos.CSV"; /*variable que tiene la ruta donde esta el archivo*/
-	private String separador = ";"; /*variable que separa los datos */
-	private ArrayList<BosTinderDTO> usuarios;/* variable de tipo ArrayList que almacena a cada usuario*/
-	private BufferedReader br;/*variable que se encarga de leer el Contenido de el arcivo*/
-	private FileReader fr;/*variable para leer archivo*/
-	private String linea;/*almacena toda la informacion de una linea del archivo */
+
+	private String ruta = "./Data/datos.CSV";
+	private String separador = ";";
+	private ArrayList<BosTinderDTO> usuarios;
+	private BufferedReader br;
+	private FileReader fr;
+	private BufferedWriter bw;
+	private FileWriter fw;
+	private String linea;
 	
-	public ArrayList<BosTinderDTO> leerUsuarios(String nombreArchivo){  /*metodo que lee el archivo y almacena la informacion en un ArrayList */
-		ArrayList<BosTinderDTO> usuarios = new ArrayList<BosTinderDTO>();/* se define la variable usuarios como un arreglo */
+	public String escribirUsuarios(ArrayList<BosTinderDTO> usuarios){
+		String mensaje = "Registro de usuarios ingresados";
+		try {
+			fw = new FileWriter(ruta);
+			bw = new BufferedWriter(fw);
+			for(BosTinderDTO b : usuarios) {
+				bw.write(b.getId() + separador + b.getNombre() + separador + b.getApellido1() + separador + b.getApellido2() + separador + b.getSexo() + separador + b.getUsuario() + separador + b.getContrasena() + separador + b.getCorreo() + separador + b.getNacimiento() + separador + b.getEdad() + separador + b.getEstatura() + separador + b.getIngresos() + separador + b.getDivorcio() + separador + b.getNlikesr() + separador + b.getNlikesd() + separador + b.getNmatches() + separador + b.getEstado() + "\n");
+			}
+			bw.close();
+		}
+		catch(IOException e) {
+			
+		}
+		return mensaje;
+	}
+	
+	public ArrayList<BosTinderDTO> leerUsuarios(String nombreArchivo){
+		ArrayList<BosTinderDTO> usuarios = new ArrayList<BosTinderDTO>();
 			try {
-				fr = new FileReader(ruta);/*Se define File reader y la ruta donde debe buscar el archivo */
-				br = new BufferedReader(fr);/* se define Buffer reader y se le dice que lea al FileReader */
-				while((linea = br.readLine()) != null) { /* mientras lo leido de el arrcivo sea diferente a nulo, que lo guarde en el arreglo, y asi con todos los usuarios */
+				fr = new FileReader(ruta);
+				br = new BufferedReader(fr);
+				while((linea = br.readLine()) != null) {
 					String[] datos = linea.split(separador);
 					usuarios.add(new BosTinderDTO(datos[0], datos[1], datos[2], datos[3], datos[4], datos[5], datos[6], datos[7], datos[8], datos[9], datos[10], datos[11], datos[12], datos[13], datos[14], datos[15], datos[16]));
 				}
@@ -33,7 +49,6 @@ public class BosTinderFile {
 			}
 		return usuarios;
 	}
-	/* getters y setters*/
 	public String getRuta() {
 		return ruta;
 	}
