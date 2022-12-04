@@ -12,11 +12,13 @@ public class BosTinderFile {
 	private String ruta = "./Data/datos.CSV";
 	private String separador = ";";
 	private ArrayList<BosTinderDTO> usuarios;
+	
 	private BufferedReader br;
 	private FileReader fr;
 	private BufferedWriter bw;
 	private FileWriter fw;
 	private String linea;
+	
 	
 	public String escribirUsuarios(ArrayList<BosTinderDTO> usuarios){
 		String mensaje = "Registro de usuarios ingresados";

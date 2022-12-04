@@ -10,15 +10,19 @@ import co.edu.unbosque.model.persistence.BosTinderFile;
 
 public class BosTinderDAO {
 	
+	
 	private BosTinderFile bf;
+	private BosTinderDTO b;
 	private BosTinderDTO umostrar;
 	private BosTinderDTO umostrar2;
 	private BosTinderDTO encontrado;
 	private BosTinderDTO encontrado2;
 	private BosTinderDTO encontrado3;
 	
-	public BosTinderDAO(BosTinderFile bf) {
+	
+	public BosTinderDAO(BosTinderFile bf, BosTinderDTO b) {
 		this.bf = bf;
+		this.b = b;
 	}
 	
 	public BosTinderDTO buscarUsuarios(String usuario, ArrayList<BosTinderDTO> usuarios) {
@@ -119,6 +123,47 @@ public class BosTinderDAO {
 			resp= true;
 		}
 		return resp;
+	}
+
+	public void ordenarPorlikes(ArrayList<BosTinder>usuarios, int inicio, int fin){
+		BosTinder pivote = usuarios.get(inicio);
+		int i = inicio;
+		int j = fin;
+		
+		BosTinder aux;
+	
+		while(i < j) {
+			
+			while(usuarios.get(i) <= pivote.getBtdao().getB().getNlikesr() && i<j) {
+				i++;
+			}
+			while(usuarios.get(j).getBtdao().getB().getNlikesr() > pivote.getBtdao().getB().getNlikesr()) {
+				j--;
+			}
+			if(i<j) {
+				aux = usuarios.get(i);
+				usuarios.set(i, usuarios.get(j));
+				usuarios.set(j, aux);
+			}
+		}
+		usuarios.set(inicio, usuarios.get(j));
+		usuarios.set(j, pivote);
+		if(inicio < j - 1) {
+			usuarios= ordenarPorLikes(usuarios,inicio,j-1);
+		}
+		if(j+1<fin) {
+			usuarios= ordenarPorLikes(usuarios,j+1,fin);
+		}
+		return usuarios;
+	}
+
+
+	public BosTinderDTO getB() {
+		return b;
+	}
+
+	public void setB(BosTinderDTO b) {
+		this.b = b;
 	}
 
 	public BosTinderDTO getUmostrar() {
