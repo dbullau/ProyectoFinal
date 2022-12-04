@@ -14,7 +14,7 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import javax.swing.JOptionPane;
 
-import enviocorreo.EnvioCorreos;
+
 
 public class Correos {
 	private static String emailFrom = "";
