@@ -18,11 +18,11 @@ public class BosTinderDAO {
 	private BosTinderDTO encontrado;
 	private BosTinderDTO encontrado2;
 	private BosTinderDTO encontrado3;
+	private BosTinderDTO encontrado4;
 	
 	
-	public BosTinderDAO(BosTinderFile bf, BosTinderDTO b) {
+	public BosTinderDAO(BosTinderFile bf) {
 		this.bf = bf;
-		this.b = b;
 	}
 	
 	public BosTinderDTO buscarUsuarios(String usuario, ArrayList<BosTinderDTO> usuarios) {
@@ -62,6 +62,19 @@ public class BosTinderDAO {
 		}
 
 		return encontrado3;
+	}
+	
+	public BosTinderDTO buscarUsuariosAdmin2(String id, ArrayList<BosTinderDTO> usuarios) {
+		encontrado4 = null;
+		if (!usuarios.isEmpty()) {
+			for (int i = 0; i < usuarios.size(); i++) {
+				if (usuarios.get(i).getId().equals(id)) {
+					encontrado4 = usuarios.get(i);
+				}
+			}
+		}
+
+		return encontrado4;
 	}
 	
 	public boolean agregarUsuarios(String id, String nombre, String apellido1, String apellido2, String sexo, String usuario, String contrasena, String correo, String nacimiento, String edad, String estatura, String ingresos, String divorcio, String nlikesr, String nlikesd, String nmatches, String estado, ArrayList<BosTinderDTO> usuarios) {
@@ -125,19 +138,20 @@ public class BosTinderDAO {
 		return resp;
 	}
 
-	public void ordenarPorlikes(ArrayList<BosTinder>usuarios, int inicio, int fin){
-		BosTinder pivote = usuarios.get(inicio);
+	public BosTinderDTO ordenarPorlikes(ArrayList<BosTinderDTO> usuarios, int inicio, int fin){
+		ordenarPorlikes(usuarios,1,usuarios.size()-1);
+		BosTinderDTO pivote = usuarios.get(inicio);
 		int i = inicio;
 		int j = fin;
 		
-		BosTinder aux;
+		BosTinderDTO aux;
 	
 		while(i < j) {
 			
-			while(usuarios.get(i) <= pivote.getBtdao().getB().getNlikesr() && i<j) {
+			while(Integer.parseInt(usuarios.get(i).getNlikesr()) <= Integer.parseInt(pivote.getNlikesr()) && i<j) {
 				i++;
 			}
-			while(usuarios.get(j).getBtdao().getB().getNlikesr() > pivote.getBtdao().getB().getNlikesr()) {
+			while(Integer.parseInt(usuarios.get(j).getNlikesr()) > Integer.parseInt(pivote.getNlikesr())) {
 				j--;
 			}
 			if(i<j) {
@@ -149,12 +163,12 @@ public class BosTinderDAO {
 		usuarios.set(inicio, usuarios.get(j));
 		usuarios.set(j, pivote);
 		if(inicio < j - 1) {
-			usuarios= ordenarPorLikes(usuarios,inicio,j-1);
+			ordenarPorlikes(usuarios,inicio,j-1);
 		}
 		if(j+1<fin) {
-			usuarios= ordenarPorLikes(usuarios,j+1,fin);
+			ordenarPorlikes(usuarios,j+1,fin);
 		}
-		return usuarios;
+		return b;
 	}
 
 
@@ -201,5 +215,12 @@ public class BosTinderDAO {
 
 	public void setEncontrado3(BosTinderDTO encontrado3) {
 		this.encontrado3 = encontrado3;
+	}
+	public BosTinderDTO getEncontrado4() {
+		return encontrado4;
+	}
+
+	public void setEncontrado4(BosTinderDTO encontrado4) {
+		this.encontrado4 = encontrado4;
 	}
 }

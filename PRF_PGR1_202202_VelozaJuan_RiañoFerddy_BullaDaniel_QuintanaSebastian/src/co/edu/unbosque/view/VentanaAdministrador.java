@@ -41,7 +41,7 @@ public class VentanaAdministrador extends JFrame{
 		this.colorMorado = colorMorado;
 	}
 
-	public static final String LIKES = "likes";
+	public static final String LIKESG = "likes";
 	public static final String INGRESOS = "ingresos";
 	public static final String GENERAR= "generar";
 	public static final String BUSCAR = "buscar";
@@ -176,7 +176,7 @@ public class VentanaAdministrador extends JFrame{
 		ImageIcon icono2 = new ImageIcon(imag2.getImage().getScaledInstance(110, 40, Image.SCALE_DEFAULT));
 		btlikes.setIcon(icono2);
 		btlikes.setBounds(530, 280, 100, 40);
-		btlikes.setActionCommand(LIKES);
+		btlikes.setActionCommand(LIKESG);
 		
 		btingresos = new JButton("Ingresos");
 		ImageIcon imag3 = new ImageIcon(getClass().getResource("/Imagenes/BotonIngresos.png"));
@@ -218,7 +218,6 @@ public class VentanaAdministrador extends JFrame{
 		add(fondo);
 		
 	}
-
 	public JTextArea getInformacioncompleta() {
 		return informacioncompleta;
 	}
@@ -267,15 +266,6 @@ public class VentanaAdministrador extends JFrame{
 		this.btborrar = btborrar;
 	}
 
-
-	public JComboBox getGenero() {
-		return genero;
-	}
-
-	public void setGenero(JComboBox genero) {
-		this.genero = genero;
-	}
-
 	public JButton getBtingresos() {
 		return btingresos;
 	}
@@ -290,6 +280,158 @@ public class VentanaAdministrador extends JFrame{
 
 	public void setBtlikes(JButton btlikes) {
 		this.btlikes = btlikes;
+	}
+
+	public JButton getBtgenerarpdf() {
+		return btgenerarpdf;
+	}
+
+	public void setBtgenerarpdf(JButton btgenerarpdf) {
+		this.btgenerarpdf = btgenerarpdf;
+	}
+
+	public JComboBox getGenero() {
+		return genero;
+	}
+
+	public void setGenero(JComboBox genero) {
+		this.genero = genero;
+	}
+
+	public JMenuBar getBarramenu() {
+		return barramenu;
+	}
+
+	public void setBarramenu(JMenuBar barramenu) {
+		this.barramenu = barramenu;
+	}
+
+	public JMenu getMenuordenar() {
+		return menuordenar;
+	}
+
+	public void setMenuordenar(JMenu menuordenar) {
+		this.menuordenar = menuordenar;
+	}
+
+	public JMenu getLikes() {
+		return likes;
+	}
+
+	public void setLikes(JMenu likes) {
+		this.likes = likes;
+	}
+
+	public JMenu getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(JMenu nombre) {
+		this.nombre = nombre;
+	}
+
+	public JMenu getApellido() {
+		return apellido;
+	}
+
+	public void setApellido(JMenu apellido) {
+		this.apellido = apellido;
+	}
+
+	public JMenu getEdad() {
+		return edad;
+	}
+
+	public void setEdad(JMenu edad) {
+		this.edad = edad;
+	}
+
+	public JMenu getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(JMenu usuario) {
+		this.usuario = usuario;
+	}
+
+	public JMenuItem getLikesascendente() {
+		return likesascendente;
+	}
+
+	public void setLikesascendente(JMenuItem likesascendente) {
+		this.likesascendente = likesascendente;
+	}
+
+	public JMenuItem getLikesdescendente() {
+		return likesdescendente;
+	}
+
+	public void setLikesdescendente(JMenuItem likesdescendente) {
+		this.likesdescendente = likesdescendente;
+	}
+
+	public JMenuItem getNombreascendente() {
+		return nombreascendente;
+	}
+
+	public void setNombreascendente(JMenuItem nombreascendente) {
+		this.nombreascendente = nombreascendente;
+	}
+
+	public JMenuItem getNombredescendente() {
+		return nombredescendente;
+	}
+
+	public void setNombredescendente(JMenuItem nombredescendente) {
+		this.nombredescendente = nombredescendente;
+	}
+
+	public JMenuItem getApellidoascendente() {
+		return apellidoascendente;
+	}
+
+	public void setApellidoascendente(JMenuItem apellidoascendente) {
+		this.apellidoascendente = apellidoascendente;
+	}
+
+	public JMenuItem getApellidodescendente() {
+		return apellidodescendente;
+	}
+
+	public void setApellidodescendente(JMenuItem apellidodescendente) {
+		this.apellidodescendente = apellidodescendente;
+	}
+
+	public JMenuItem getEdadascendente() {
+		return edadascendente;
+	}
+
+	public void setEdadascendente(JMenuItem edadascendente) {
+		this.edadascendente = edadascendente;
+	}
+
+	public JMenuItem getEdaddescendente() {
+		return edaddescendente;
+	}
+
+	public void setEdaddescendente(JMenuItem edaddescendente) {
+		this.edaddescendente = edaddescendente;
+	}
+
+	public JMenuItem getUsuarioascendente() {
+		return usuarioascendente;
+	}
+
+	public void setUsuarioascendente(JMenuItem usuarioascendente) {
+		this.usuarioascendente = usuarioascendente;
+	}
+
+	public JMenuItem getUsuariodescendente() {
+		return usuariodescendente;
+	}
+
+	public void setUsuariodescendente(JMenuItem usuariodescendente) {
+		this.usuariodescendente = usuariodescendente;
 	}
 
 	public JScrollPane getScroll1() {
@@ -308,14 +450,79 @@ public class VentanaAdministrador extends JFrame{
 		this.scroll2 = scroll2;
 	}
 
-	public JButton getBtgenerarpdf() {
-		return btgenerarpdf;
+	public JLabel getFondo() {
+		return fondo;
 	}
 
-	public void setBtgenerarpdf(JButton btgenerarpdf) {
-		this.btgenerarpdf = btgenerarpdf;
+	public void setFondo(JLabel fondo) {
+		this.fondo = fondo;
 	}
-	
-	
-	
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+	public static String getLikesg() {
+		return LIKESG;
+	}
+
+	public static String getIngresos() {
+		return INGRESOS;
+	}
+
+	public static String getGenerar() {
+		return GENERAR;
+	}
+
+	public static String getBuscar() {
+		return BUSCAR;
+	}
+
+	public static String getActualizar() {
+		return ACTUALIZAR;
+	}
+
+	public static String getBorrar() {
+		return BORRAR;
+	}
+
+	public static String getLikesa() {
+		return LIKESA;
+	}
+
+	public static String getLikesd() {
+		return LIKESD;
+	}
+
+	public static String getNombrea() {
+		return NOMBREA;
+	}
+
+	public static String getNombred() {
+		return NOMBRED;
+	}
+
+	public static String getApellidoa() {
+		return APELLIDOA;
+	}
+
+	public static String getApellidod() {
+		return APELLIDOD;
+	}
+
+	public static String getEdada() {
+		return EDADA;
+	}
+
+	public static String getEdadd() {
+		return EDADD;
+	}
+
+	public static String getUsuarioa() {
+		return USUARIOA;
+	}
+
+	public static String getUsuariod() {
+		return USUARIOD;
+	}	
 }

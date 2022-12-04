@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import co.edu.unbosque.model.BosTinder;
+import co.edu.unbosque.model.BosTinderDTO;
 import co.edu.unbosque.view.View;
 
 public class Controller implements ActionListener{
@@ -171,6 +172,18 @@ public class Controller implements ActionListener{
 		    	  }else {
 		    		  v.mostrarInformacion("El usuario con ID: " + v.getVadmin().getTxtnumusuario().getText() + " no existe");
 		    	  }
+		      }
+		      
+		      if(e.getActionCommand().equals(v.getVadmin().ACTUALIZAR)) {
+		    	 v.mostrarInformacion("Me la vienes turbo mamando con tus ordenamientos pichurrios");
+		      }
+		      
+		      if(e.getActionCommand().equals(v.getVadmin().LIKESG)) {
+		    	  v.mostrarInformacion("Me la turbo mamas con el top 10 de likes");
+		      }
+		      
+		      if(e.getActionCommand().equals(v.getVadmin().INGRESOS)) {
+		    	  v.mostrarInformacion("El top 10 de los ingresos te los podes meter por el culo si no me vas a dar un peso");
 		      }
 	}
 	
