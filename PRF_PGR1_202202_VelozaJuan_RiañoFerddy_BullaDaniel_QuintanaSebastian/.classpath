@@ -11,5 +11,9 @@
 	<classpathentry kind="lib" path="libreria/javax.faces-api-2.0.jar"/>
 	<classpathentry kind="lib" path="libreria/javax-inject.jar"/>
 	<classpathentry kind="lib" path="libreria/mail.jar"/>
+	<classpathentry kind="lib" path="libreria/aspose-pdf-22.11.jar"/>
+	<classpathentry kind="lib" path="libreria/aspose-pdf-22.11-javadoc.jar"/>
+	<classpathentry kind="lib" path="libreria/aspose-pdf-22.11-jdk16.jar"/>
+	<classpathentry kind="lib" path="libreria/aspose-pdf-22.11-jdk17.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

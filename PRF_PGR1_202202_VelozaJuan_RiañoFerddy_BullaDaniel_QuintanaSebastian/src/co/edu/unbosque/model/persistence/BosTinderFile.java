@@ -2,7 +2,6 @@ package co.edu.unbosque.model.persistence;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 import co.edu.unbosque.model.BosTinderDTO;
 
@@ -12,7 +11,6 @@ public class BosTinderFile {
 	private String ruta = "./Data/datos.CSV";
 	private String separador = ";";
 	private ArrayList<BosTinderDTO> usuarios;
-	
 	private BufferedReader br;
 	private FileReader fr;
 	private BufferedWriter bw;
@@ -50,6 +48,12 @@ public class BosTinderFile {
 				e.printStackTrace();
 			}
 		return usuarios;
+	}
+	
+	public String escribirPDF() {
+		String mensaje = "PDF generado exitosamente";
+	
+		return mensaje;
 	}
 	public String getRuta() {
 		return ruta;
